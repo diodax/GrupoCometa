@@ -212,4 +212,4 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 #Archivo de conexión con DB
-dsProducto.xsd
+dsProducto.*
