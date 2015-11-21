@@ -9,5 +9,7 @@ namespace GrupoCometa.Models
     {
         public string cTestVar { get; set; }
         public int nAnotherTestVar { get; set; }
+
+        public int nAgain { get; set; }
     }
 }
