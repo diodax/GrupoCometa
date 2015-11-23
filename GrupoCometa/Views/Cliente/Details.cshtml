@@ -1,0 +1,74 @@
+﻿@model GrupoCometa.Models.Cliente
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles del Cliente</h2>
+
+<div>
+    @*<h4>Cliente</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cEmpresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cRepresentante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cRepresentante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cTelefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cTelefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nDescuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nDescuento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cRNC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cRNC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { idCliente = Model.idCliente }, new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-default" })
+</p>
