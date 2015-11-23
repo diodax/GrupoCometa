@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{30C03B6A-74C8-4315-83D8-DECF1BBDDF45}</ProjectGuid>
+    <ProjectGuid>{CADA8102-6512-4CC1-B1CD-B6CFA0B79431}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GrupoCometa</RootNamespace>
-    <AssemblyName>GrupoCometa</AssemblyName>
+    <RootNamespace>GrupoCometaBranch</RootNamespace>
+    <AssemblyName>GrupoCometaBranch</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -115,138 +115,79 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductoController.cs" />
-    <Compile Include="Data\dsProducto.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsProducto.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Data\dsTest.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsTest.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Producto.cs" />
-    <Compile Include="Models\TestClass.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Antlr3.Runtime.pdb" />
-    <Content Include="bin\GrupoCometa.dll" />
-    <Content Include="bin\GrupoCometa.pdb" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
-    <Content Include="bin\roslyn\csc.exe" />
-    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="bin\roslyn\vbc.exe" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Helpers.xml" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Optimization.xml" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
-    <Content Include="bin\System.Web.WebPages.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
-    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\css\bootstrap-theme.css" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\css\bootstrap-theme.min.css" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\css\bootstrap.css" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\css\bootstrap.min.css" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\js\bootstrap.js" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\js\bootstrap.min.js" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\js\npm.js" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\css\dataTables.bootstrap.css" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\css\dataTables.bootstrap.min.css" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\css\dataTables.foundation.css" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\css\dataTables.foundation.min.css" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\css\dataTables.jqueryui.css" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\css\dataTables.jqueryui.min.css" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\css\jquery.dataTables.css" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\css\jquery.dataTables.min.css" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\css\jquery.dataTables_themeroller.css" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\images\sort_asc.png" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\images\sort_asc_disabled.png" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\images\sort_both.png" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\images\sort_desc.png" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\images\sort_desc_disabled.png" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\js\dataTables.bootstrap.js" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\js\dataTables.bootstrap.min.js" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\js\dataTables.foundation.js" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\js\dataTables.foundation.min.js" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\js\dataTables.jqueryui.js" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\js\dataTables.jqueryui.min.js" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\js\jquery.dataTables.js" />
-    <Content Include="Content\plugins\DataTables\DataTables-1.10.9\js\jquery.dataTables.min.js" />
-    <Content Include="Content\plugins\DataTables\datatables.css" />
-    <Content Include="Content\plugins\DataTables\datatables.js" />
-    <Content Include="Content\plugins\DataTables\datatables.min.css" />
-    <Content Include="Content\plugins\DataTables\datatables.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Data\dsProducto.xsc">
-      <DependentUpon>dsProducto.xsd</DependentUpon>
-    </Content>
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\css\bootstrap-theme.css.map" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\css\bootstrap.css.map" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="bin\GrupoCometa.dll.config" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <None Include="Data\dsProducto.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsProducto.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="Data\dsProducto.xss">
-      <DependentUpon>dsProducto.xsd</DependentUpon>
-    </Content>
-    <Content Include="Data\dsTest.xsc">
-      <DependentUpon>dsTest.xsd</DependentUpon>
-    </Content>
-    <None Include="Data\dsTest.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsTest.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="Data\dsTest.xss">
-      <DependentUpon>dsTest.xsd</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -273,11 +214,26 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Producto\Index.cshtml" />
-    <Content Include="Views\Producto\Details.cshtml" />
-    <Content Include="Views\Producto\Insert.cshtml" />
-    <Content Include="Views\Producto\Edit.cshtml" />
-    <Content Include="Views\Producto\Delete.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -306,9 +262,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>16318</DevelopmentServerPort>
+          <DevelopmentServerPort>17078</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:16318/</IISUrl>
+          <IISUrl>http://localhost:17078/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
