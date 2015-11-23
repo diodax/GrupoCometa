@@ -46,11 +46,24 @@
             @Html.DisplayFor(modelItem => item.cRNC)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Editar", "Edit", new { id = item.idCliente }, new { @class = "btn btn-default"}) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.idCliente }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.idCliente }, new { @class = "btn btn-default" })
         </td>
     </tr>
 }
 
 </table>
+
+<script>
+    $(document).ready(function () {
+        $('.table').DataTable({
+            "searching": false,
+            "lengthChange": false,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+            }
+
+        });
+    });
+</script>

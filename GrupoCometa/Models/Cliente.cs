@@ -101,7 +101,7 @@ namespace GrupoCometa.Models
         public void InsertCliente()
         {
             Data.dsClienteTableAdapters.ClienteTableAdapter Adapter = new Data.dsClienteTableAdapters.ClienteTableAdapter();
-            Adapter.InsertCliente(this.idCliente, this.cRepresentante, this.cEmpresa, this.cEmail, this.cTelefono, this.nDescuento, this.cRNC);
+            Adapter.InsertCliente(this.cRepresentante, this.cEmpresa, this.cEmail, this.cTelefono, this.nDescuento, this.cRNC);
         }
 
         /// <summary>

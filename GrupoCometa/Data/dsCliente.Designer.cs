@@ -1301,14 +1301,14 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertCliente(global::System.Nullable<int> idCliente, string cRepresentante, string cEmpresa, string cEmail, string cTelefono, global::System.Nullable<int> nDescuento, string cRNC) {
+        public virtual int InsertCliente(/*global::System.Nullable<int> idCliente,*/ string cRepresentante, string cEmpresa, string cEmail, string cTelefono, global::System.Nullable<int> nDescuento, string cRNC) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((idCliente.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(idCliente.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            //if ((idCliente.HasValue == true)) {
+            //    command.Parameters[1].Value = ((int)(idCliente.Value));
+            //}
+            //else {
+            //    command.Parameters[1].Value = global::System.DBNull.Value;
+            //}
             if ((cRepresentante == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }

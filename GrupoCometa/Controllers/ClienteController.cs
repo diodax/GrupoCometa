@@ -18,9 +18,9 @@ namespace GrupoCometa.Controllers
         }
 
         // GET: Cliente/Details/5
-        public ActionResult Details(int idCliente)
+        public ActionResult Details(int id)
         {
-            Cliente newModel = new Cliente(idCliente);
+            Cliente newModel = new Cliente(id);
             return View(newModel);
         }
 
@@ -49,10 +49,10 @@ namespace GrupoCometa.Controllers
 
 
 
-        // GET: Cliente/Edit/
-        public ActionResult Edit(int idCliente)
+        // GET: Cliente/Edit/5
+        public ActionResult Edit(int id)
         {
-            Cliente newModel = new Cliente(idCliente);
+            Cliente newModel = new Cliente(id);
             //newModel.listaTiposProducto = Producto.GetListaTiposProducto();
             return View(newModel);
         }
