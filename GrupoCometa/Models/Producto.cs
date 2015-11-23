@@ -36,7 +36,7 @@ namespace GrupoCometa.Models
         public Producto(int idCodigo)
         {
             Data.dsProductoTableAdapters.ProductosTableAdapter Adapter = new Data.dsProductoTableAdapters.ProductosTableAdapter();
-            Data.dsProducto.ProductosDataTable dt = Adapter.SelectProducto(idCodigo);
+            Data.dsProducto.ProductosDataTable dt = Adapter.SelectProducto( idCodigo);
 
             if (dt.Rows.Count > 0)
             {
