@@ -1,0 +1,56 @@
+﻿@model IEnumerable<GrupoCometa.Models.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Clientes</h2>
+
+<p>
+    @Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.idCliente)</th>
+            <th>@Html.DisplayNameFor(model => model.cEmpresa)</th>
+            <th>@Html.DisplayNameFor(model => model.cRepresentante)</th>
+            <th>@Html.DisplayNameFor(model => model.cEmail)</th>
+            <th>@Html.DisplayNameFor(model => model.cTelefono)</th>
+            <th>@Html.DisplayNameFor(model => model.nDescuento)</th>
+            <th>@Html.DisplayNameFor(model => model.cRNC)</th>
+            <th></th>
+        </tr>
+    </thead>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cEmpresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cRepresentante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cTelefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nDescuento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cRNC)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
