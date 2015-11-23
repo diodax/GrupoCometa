@@ -1,0 +1,21 @@
+{
+  "name": "GrupoCometa",
+  "homepage": "https://github.com/diodax/GrupoCometa",
+  "authors": [
+    "diodax <diosdavi20@gmail.com>"
+  ],
+  "description": "Sistema web de inventario para la importadora Grupo Cometa",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "startbootstrap-sb-admin-2": "~1.0.7"
+  }
+}
