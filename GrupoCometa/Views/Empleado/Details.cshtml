@@ -1,0 +1,76 @@
+﻿@model GrupoCometa.Models.Empleado
+
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtFechaIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtFechaIngreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cPuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cPuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mSalario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mSalario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idDepto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idDepto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idSucursal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
