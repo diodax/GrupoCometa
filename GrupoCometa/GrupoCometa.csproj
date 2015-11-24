@@ -120,10 +120,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-	<Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
-	<Compile Include="Data\dsCliente.Designer.cs">
+    <Compile Include="Data\dsCliente.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCliente.xsd</DependentUpon>
@@ -144,7 +144,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-	<Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\TestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -686,7 +686,7 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-	<Content Include="Data\dsCliente.xsc">
+    <Content Include="Data\dsCliente.xsc">
       <DependentUpon>dsCliente.xsd</DependentUpon>
     </Content>
     <None Include="Data\dsCliente.xsd">
@@ -1059,7 +1059,7 @@
     <Content Include="Views\Producto\Insert.cshtml" />
     <Content Include="Views\Producto\Edit.cshtml" />
     <Content Include="Views\Producto\Delete.cshtml" />
-	<Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Cliente\Insert.cshtml" />
     <Content Include="Views\Cliente\Delete.cshtml" />
     <Content Include="Views\Cliente\Details.cshtml" />

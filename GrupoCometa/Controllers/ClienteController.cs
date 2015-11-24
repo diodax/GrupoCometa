@@ -18,9 +18,9 @@ namespace GrupoCometa.Controllers
         }
 
         // GET: Cliente/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int idCliente)
         {
-            Cliente newModel = new Cliente(id);
+            Cliente newModel = new Cliente(idCliente);
             return View(newModel);
         }
 
@@ -50,9 +50,9 @@ namespace GrupoCometa.Controllers
 
 
         // GET: Cliente/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int idCliente)
         {
-            Cliente newModel = new Cliente(id);
+            Cliente newModel = new Cliente(idCliente);
             //newModel.listaTiposProducto = Producto.GetListaTiposProducto();
             return View(newModel);
         }
@@ -73,17 +73,17 @@ namespace GrupoCometa.Controllers
         }
 
         // GET: Cliente/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int idCliente)
         {
-            Cliente newModel = new Cliente(id);
+            Cliente newModel = new Cliente(idCliente);
             return View(newModel);
         }
 
         // POST: Cliente/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, Cliente newModel)
+        public ActionResult Delete(int idCliente, Cliente newModel)
         {
-            Cliente.DeleteCliente(id);
+            Cliente.DeleteCliente(idCliente);
             return RedirectToAction("Index");
         }
     }

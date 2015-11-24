@@ -46,9 +46,9 @@
             @Html.DisplayFor(modelItem => item.cRNC)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id = item.idCliente }, new { @class = "btn btn-default"}) |
-            @Html.ActionLink("Detalles", "Details", new { id = item.idCliente }, new { @class = "btn btn-default" }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id = item.idCliente }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Editar", "Edit", new { idCliente = item.idCliente }, new { @class = "btn btn-default"}) |
+            @Html.ActionLink("Detalles", "Details", new { idCliente = item.idCliente }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { idCliente = item.idCliente }, new { @class = "btn btn-default" })
         </td>
     </tr>
 }
