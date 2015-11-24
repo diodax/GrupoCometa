@@ -1,0 +1,77 @@
+﻿@model IEnumerable<GrupoCometa.Models.Suplidor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Suplidores</h2>
+
+<p>
+    @Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idSuplidor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cRepresentante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cTelefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cDireccion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idSuplidor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cRepresentante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cTelefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cDireccion)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {idSuplidor = item.idSuplidor}, new {@class = "btn btn-default"}) |
+                @Html.ActionLink("Detalles", "Details", new {idSuplidor = item.idSuplidor}, new {@class = "btn btn-default"}) |
+                @Html.ActionLink("Eliminar", "Delete", new {idSuplidor = item.idSuplidor}, new {@class = "btn btn-default"})
+            </td>
+        </tr>
+    }
+
+</table>
+
+<script>
+    $(document).ready(function () {
+        $('.table').DataTable({
+            "searching": false,
+            "lengthChange": false,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+            }
+
+        });
+    });
+</script>
