@@ -92,6 +92,7 @@ namespace GrupoCometa.Models
             Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter Adapter = new Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter();
             Data.dsFactura.FacturasDetalleDataTable dt = Adapter.SelectListaFacturasDetalle(idFacturaHeader, null);
 
+
             foreach(var dr in dt)
             {
                 FacturaDetalle temp = new FacturaDetalle();
