@@ -80,7 +80,7 @@ namespace GrupoCometa.Controllers
             Producto newModel = new Producto(idCodigo);
             return View(newModel);
         }
-
+        
         [HttpPost]
         public ActionResult Delete(int idCodigo, Producto newModel)
         {
