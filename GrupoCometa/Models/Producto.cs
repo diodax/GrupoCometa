@@ -81,6 +81,27 @@ namespace GrupoCometa.Models
         }
 
         /// <summary>
+        /// Genera el contenido del dropbdown con los productos
+        /// </summary>
+        /// <returns></returns>
+        public static List<SelectListItem> GetSelectListProducto()
+        {
+            List<SelectListItem> listaProductos = new List<SelectListItem>();
+            Data.dsProductoTableAdapters.ProductosTableAdapter Adapter = new Data.dsProductoTableAdapters.ProductosTableAdapter();
+            Data.dsProducto.ProductosDataTable dt = Adapter.SelectListaProductos();
+
+            foreach (var dr in dt)
+            {
+                SelectListItem item = new SelectListItem();
+                item.Value = dr.idCodigo.ToString().Trim();
+                item.Text = dr.cNombre.Trim() + " " + dr.cModelo.Trim();
+                listaProductos.Add(item);
+            }
+
+            return listaProductos;
+        }
+
+        /// <summary>
         /// Genera el contenido del dropbdown con los tipos de productos
         /// </summary>
         /// <returns></returns>

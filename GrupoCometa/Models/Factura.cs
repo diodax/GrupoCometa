@@ -59,6 +59,7 @@ namespace GrupoCometa.Models
 
                 this.clienteActual = new Cliente(this.idCliente);
                 this.listaDetalle = FacturaDetalle.GetListaFacturasDetalle(this.idFacturaHeader);
+                this.GetSelectLists();
             }
         }
 
@@ -89,12 +90,33 @@ namespace GrupoCometa.Models
             return listaFacturas;
         }
 
+        /// <summary>
+        /// Genera el contenido del dropbdown con los tipos de pago
+        /// </summary>
+        /// <returns></returns>
+        public static List<SelectListItem> GetListaTiposPago()
+        {
+            List<SelectListItem> listaTipos = new List<SelectListItem>();
+            Data.dsProductoTableAdapters.TiposProductoTableAdapter Adapter = new Data.dsProductoTableAdapters.TiposProductoTableAdapter();
+            Data.dsProducto.TiposProductoDataTable dt = Adapter.SelectListaTiposProducto();
+
+            foreach (var dr in dt)
+            {
+                SelectListItem item = new SelectListItem();
+                item.Value = dr.idTipo;
+                item.Text = dr.cDescripcion;
+                listaTipos.Add(item);
+            }
+
+            return listaTipos;
+        }
+
         public void GetSelectLists()
         {
             //public List<SelectListItem> listaClientes { get; set; }
-            //public List<SelectListItem> listaTiposPago { get; set; }
+            this.listaTiposPago = FacturaHeader.GetListaTiposPago();
             //public List<SelectListItem> listaEmpleados { get; set; }
-            //public List<SelectListItem> listaProductos { get; set; }
+            this.listaProductos = Producto.GetSelectListProducto(); 
         }
     }
 

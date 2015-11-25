@@ -31,7 +31,7 @@
               <Mapping SourceColumn="mTotal" DataSetColumn="mTotal" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_DeleteFacturaHeader" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteFacturaHeader" Modifier="Public" Name="DeleteFacturaHeader" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteFacturaHeader">
+              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_DeleteFacturaHeader" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteFacturaHeader" Modifier="Public" Name="DeleteFacturaHeader" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteFacturaHeader">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.spF_DeleteFacturaHeader</CommandText>
@@ -42,7 +42,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_InsertUpdateFacturaHeader" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertUpdateFacturaHeader" Modifier="Public" Name="InsertUpdateFacturaHeader" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertUpdateFacturaHeader">
+              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_InsertUpdateFacturaHeader" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertUpdateFacturaHeader" Modifier="Public" Name="InsertUpdateFacturaHeader" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertUpdateFacturaHeader">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.spF_InsertUpdateFacturaHeader</CommandText>
@@ -83,7 +83,7 @@
               <Mapping SourceColumn="nCantidad" DataSetColumn="nCantidad" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_DeleteElementoFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteElementoFactura" Modifier="Public" Name="DeleteElementoFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteElementoFactura">
+              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_DeleteElementoFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteElementoFactura" Modifier="Public" Name="DeleteElementoFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteElementoFactura">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.spF_DeleteElementoFactura</CommandText>
@@ -94,7 +94,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_InsertUpdateElementoFacturaDetalle" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertUpdateElementoFacturaDetalle" Modifier="Public" Name="InsertUpdateElementoFacturaDetalle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertUpdateElementoFacturaDetalle">
+              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_InsertUpdateElementoFacturaDetalle" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertUpdateElementoFacturaDetalle" Modifier="Public" Name="InsertUpdateElementoFacturaDetalle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertUpdateElementoFacturaDetalle">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.spF_InsertUpdateElementoFacturaDetalle</CommandText>
@@ -110,6 +110,26 @@
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TiposPagoTableAdapter" GeneratorDataComponentClassName="TiposPagoTableAdapter" Name="TiposPago" UserDataComponentName="TiposPagoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_SelectListaTiposPago" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="SelectListaTiposPago" GetMethodModifier="Public" GetMethodName="SelectListaTiposPago" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="SelectListaTiposPago" UserSourceName="SelectListaTiposPago">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.spF_SelectListaTiposPago</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idTipoPago" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idTipoPago" DataSetColumn="idTipoPago" />
+              <Mapping SourceColumn="cDescripcion" DataSetColumn="cDescripcion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -118,7 +138,7 @@
   <xs:element name="dsFactura" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsFactura" msprop:Generator_UserDSName="dsFactura">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FacturasHeader" msprop:Generator_TableClassName="FacturasHeaderDataTable" msprop:Generator_TableVarName="tableFacturasHeader" msprop:Generator_RowChangedName="FacturasHeaderRowChanged" msprop:Generator_TablePropName="FacturasHeader" msprop:Generator_RowDeletingName="FacturasHeaderRowDeleting" msprop:Generator_RowChangingName="FacturasHeaderRowChanging" msprop:Generator_RowEvHandlerName="FacturasHeaderRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasHeaderRowDeleted" msprop:Generator_RowClassName="FacturasHeaderRow" msprop:Generator_UserTableName="FacturasHeader" msprop:Generator_RowEvArgName="FacturasHeaderRowChangeEvent">
+        <xs:element name="FacturasHeader" msprop:Generator_TableClassName="FacturasHeaderDataTable" msprop:Generator_TableVarName="tableFacturasHeader" msprop:Generator_TablePropName="FacturasHeader" msprop:Generator_RowDeletingName="FacturasHeaderRowDeleting" msprop:Generator_RowChangingName="FacturasHeaderRowChanging" msprop:Generator_RowEvHandlerName="FacturasHeaderRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasHeaderRowDeleted" msprop:Generator_UserTableName="FacturasHeader" msprop:Generator_RowChangedName="FacturasHeaderRowChanged" msprop:Generator_RowEvArgName="FacturasHeaderRowChangeEvent" msprop:Generator_RowClassName="FacturasHeaderRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFacturaHeader" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidFacturaHeader" msprop:Generator_ColumnPropNameInRow="idFacturaHeader" msprop:Generator_ColumnPropNameInTable="idFacturaHeaderColumn" msprop:Generator_UserColumnName="idFacturaHeader" type="xs:int" />
@@ -137,7 +157,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FacturasDetalle" msprop:Generator_TableClassName="FacturasDetalleDataTable" msprop:Generator_TableVarName="tableFacturasDetalle" msprop:Generator_RowChangedName="FacturasDetalleRowChanged" msprop:Generator_TablePropName="FacturasDetalle" msprop:Generator_RowDeletingName="FacturasDetalleRowDeleting" msprop:Generator_RowChangingName="FacturasDetalleRowChanging" msprop:Generator_RowEvHandlerName="FacturasDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasDetalleRowDeleted" msprop:Generator_RowClassName="FacturasDetalleRow" msprop:Generator_UserTableName="FacturasDetalle" msprop:Generator_RowEvArgName="FacturasDetalleRowChangeEvent">
+        <xs:element name="FacturasDetalle" msprop:Generator_TableClassName="FacturasDetalleDataTable" msprop:Generator_TableVarName="tableFacturasDetalle" msprop:Generator_TablePropName="FacturasDetalle" msprop:Generator_RowDeletingName="FacturasDetalleRowDeleting" msprop:Generator_RowChangingName="FacturasDetalleRowChanging" msprop:Generator_RowEvHandlerName="FacturasDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasDetalleRowDeleted" msprop:Generator_UserTableName="FacturasDetalle" msprop:Generator_RowChangedName="FacturasDetalleRowChanged" msprop:Generator_RowEvArgName="FacturasDetalleRowChangeEvent" msprop:Generator_RowClassName="FacturasDetalleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFacturaDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidFacturaDetalle" msprop:Generator_ColumnPropNameInRow="idFacturaDetalle" msprop:Generator_ColumnPropNameInTable="idFacturaDetalleColumn" msprop:Generator_UserColumnName="idFacturaDetalle" type="xs:int" />
@@ -154,6 +174,20 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="TiposPago" msprop:Generator_TableClassName="TiposPagoDataTable" msprop:Generator_TableVarName="tableTiposPago" msprop:Generator_TablePropName="TiposPago" msprop:Generator_RowDeletingName="TiposPagoRowDeleting" msprop:Generator_RowChangingName="TiposPagoRowChanging" msprop:Generator_RowEvHandlerName="TiposPagoRowChangeEventHandler" msprop:Generator_RowDeletedName="TiposPagoRowDeleted" msprop:Generator_UserTableName="TiposPago" msprop:Generator_RowChangedName="TiposPagoRowChanged" msprop:Generator_RowEvArgName="TiposPagoRowChangeEvent" msprop:Generator_RowClassName="TiposPagoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idTipoPago" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidTipoPago" msprop:Generator_ColumnPropNameInRow="idTipoPago" msprop:Generator_ColumnPropNameInTable="idTipoPagoColumn" msprop:Generator_UserColumnName="idTipoPago" type="xs:int" />
+              <xs:element name="cDescripcion" msprop:Generator_ColumnVarNameInTable="columncDescripcion" msprop:Generator_ColumnPropNameInRow="cDescripcion" msprop:Generator_ColumnPropNameInTable="cDescripcionColumn" msprop:Generator_UserColumnName="cDescripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -163,6 +197,10 @@
     <xs:unique name="FacturasDetalle_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:FacturasDetalle" />
       <xs:field xpath="mstns:idFacturaDetalle" />
+    </xs:unique>
+    <xs:unique name="TiposPago_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TiposPago" />
+      <xs:field xpath="mstns:idTipoPago" />
     </xs:unique>
   </xs:element>
 </xs:schema>
