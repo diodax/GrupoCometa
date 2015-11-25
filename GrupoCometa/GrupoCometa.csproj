@@ -123,6 +123,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\FacturacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\SuplidorController.cs" />
     <Compile Include="Data\dsCliente.Designer.cs">
@@ -134,6 +135,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsInventario1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInventario.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\dsProducto.cs">
       <DependentUpon>dsProducto.xsd</DependentUpon>
@@ -160,6 +166,7 @@
     <Compile Include="Models\CuentasPorCobrar.cs" />
     <Compile Include="Models\CuentasPorPagar.cs" />
     <Compile Include="Models\Factura.cs" />
+    <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Suplidor.cs" />
     <Compile Include="Models\TestClass.cs" />
@@ -1036,6 +1043,17 @@
     <Content Include="Data\dsFactura.xss">
       <DependentUpon>dsFactura.xsd</DependentUpon>
     </Content>
+    <Content Include="Data\dsInventario.xsc">
+      <DependentUpon>dsInventario.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\dsInventario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInventario1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Data\dsInventario.xss">
+      <DependentUpon>dsInventario.xsd</DependentUpon>
+    </Content>
     <None Include="Data\dsProducto.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1110,6 +1128,11 @@
     <Content Include="Views\Suplidor\Delete.cshtml" />
     <Content Include="Views\Facturacion\Index.cshtml" />
     <Content Include="Views\Facturacion\Insert.cshtml" />
+    <Content Include="Views\Inventario\Delete.cshtml" />
+    <Content Include="Views\Inventario\Details.cshtml" />
+    <Content Include="Views\Inventario\Edit.cshtml" />
+    <Content Include="Views\Inventario\Index.cshtml" />
+    <Content Include="Views\Inventario\Insert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
