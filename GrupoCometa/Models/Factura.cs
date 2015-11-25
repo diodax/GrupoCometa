@@ -27,6 +27,8 @@ namespace GrupoCometa.Models
 
         //Objetos
         public Cliente clienteActual { get; set; }
+        public FacturaDetalle facturaDetalleActual { get; set; }
+
         public List<FacturaDetalle> listaDetalle { get; set; }
         public List<SelectListItem> listaClientes { get; set; }
         public List<SelectListItem> listaTiposPago { get; set; }
