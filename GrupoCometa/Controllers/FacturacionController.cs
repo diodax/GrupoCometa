@@ -21,6 +21,7 @@ namespace GrupoCometa.Controllers
         public ActionResult Insert()
         {
             FacturaHeader newModel = new FacturaHeader();
+            newModel.listaDetalle = new List<FacturaDetalle>();
             return View(newModel);
         }
 

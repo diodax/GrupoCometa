@@ -16,7 +16,7 @@ namespace GrupoCometa.Models
 
         public string cEmpresa { get; set; }
 
-        List<FacturaDetalle> listaDetalle { get; set; }
+        public List<FacturaDetalle> listaDetalle { get; set; }
 
         public FacturaHeader() { }
 
