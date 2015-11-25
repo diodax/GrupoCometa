@@ -4,56 +4,69 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Listado de Clientes</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Clientes</h2>
+    </div>
+</div>
 
-<p>
-    @Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-primary" })
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.idCliente)</th>
-            <th>@Html.DisplayNameFor(model => model.cEmpresa)</th>
-            <th>@Html.DisplayNameFor(model => model.cRepresentante)</th>
-            <th>@Html.DisplayNameFor(model => model.cEmail)</th>
-            <th>@Html.DisplayNameFor(model => model.cTelefono)</th>
-            <th>@Html.DisplayNameFor(model => model.nDescuento)</th>
-            <th>@Html.DisplayNameFor(model => model.cRNC)</th>
-            <th></th>
-        </tr>
-    </thead>
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idCliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cEmpresa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cRepresentante)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cTelefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nDescuento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cRNC)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { idCliente = item.idCliente }, new { @class = "btn btn-default"}) |
-            @Html.ActionLink("Detalles", "Details", new { idCliente = item.idCliente }, new { @class = "btn btn-default" }) |
-            @Html.ActionLink("Eliminar", "Delete", new { idCliente = item.idCliente }, new { @class = "btn btn-default" })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Listado de Clientes</div>
+            <div class="panel-body">
+                <p>
+                    @Html.ActionLink("Insertar Nuevo", "Insert", null, new {@class = "btn btn-primary"})
+                </p>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.idCliente)</th>
+                        <th>@Html.DisplayNameFor(model => model.cEmpresa)</th>
+                        <th>@Html.DisplayNameFor(model => model.cRepresentante)</th>
+                        <th>@Html.DisplayNameFor(model => model.cEmail)</th>
+                        <th>@Html.DisplayNameFor(model => model.cTelefono)</th>
+                        <th>@Html.DisplayNameFor(model => model.nDescuento)</th>
+                        <th>@Html.DisplayNameFor(model => model.cRNC)</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.idCliente)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cEmpresa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cRepresentante)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cEmail)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cTelefono)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nDescuento)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cRNC)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new {idCliente = item.idCliente}, new {@class = "btn btn-default"}) |
+                                @Html.ActionLink("Detalles", "Details", new {idCliente = item.idCliente}, new {@class = "btn btn-default"}) |
+                                @Html.ActionLink("Eliminar", "Delete", new {idCliente = item.idCliente}, new {@class = "btn btn-default"})
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     $(document).ready(function () {
