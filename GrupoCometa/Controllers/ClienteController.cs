@@ -28,7 +28,6 @@ namespace GrupoCometa.Controllers
         public ActionResult Insert()
         {
             Cliente newModel = new Cliente();
-            //newModel.listaTiposProducto = Producto.GetListaTiposProducto();
             return View(newModel);
         }
 
@@ -42,7 +41,6 @@ namespace GrupoCometa.Controllers
             }
             else
             {
-                //newModel.listaCliente = Producto.GetListaTiposProducto();
                 return View(newModel);
             }
         }

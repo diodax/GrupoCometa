@@ -24,8 +24,9 @@ namespace GrupoCometa.Models
         [Display(Name = "Teléfono")]
         [StringLength(10, ErrorMessage = "<i class='fa fa-times-circle'></i> El teléfono no puede exceder los {1} caracteres")]
         public string cTelefono { get; set; }
-        [Display(Name = "Descuento")]   
-        [StringLength(2, ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo no puede exceder los {1} caracteres")]
+        [Display(Name = "Descuento")]
+        [RegularExpression(@"[0-9]*\.?[0-9]+", ErrorMessage = "Price must be a Numbers only.")]
+        [Range(0, 99, ErrorMessage = "<i class='fa fa-times-circle'></i> Este valor solo puede ser un número entre {1} y {2}")]
         public int nDescuento { get; set; }
         [Display(Name = "RNC")]
         [StringLength(9, ErrorMessage = "<i class='fa fa-times-circle'></i> El RNC no puede exceder los {1} caracteres")]
