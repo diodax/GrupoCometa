@@ -41,6 +41,7 @@ namespace GrupoCometa.Models
                     this.cEmpresa = dr.cEmpresa.Trim();
 
                 //TODO: Populate list
+                this.listaDetalle = FacturaDetalle.GetListaFacturasDetalle(this.idFacturaHeader);
             }
         }
 
@@ -81,6 +82,29 @@ namespace GrupoCometa.Models
         public int idProducto { get; set; }
         public int nCantidad { get; set; }
 
+        public string cNombre { get; set; }
+
         public FacturaDetalle() { }
+
+        public static List<FacturaDetalle> GetListaFacturasDetalle(int idFacturaHeader)
+        {
+            List<FacturaDetalle> listaFacturas = new List<FacturaDetalle>();
+            Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter Adapter = new Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter();
+            Data.dsFactura.FacturasDetalleDataTable dt = Adapter.SelectListaFacturasDetalle(idFacturaHeader, null);
+
+            foreach(var dr in dt)
+            {
+                FacturaDetalle temp = new FacturaDetalle();
+                temp.idFacturaDetalle = dr.idFacturaDetalle;
+                temp.idFacturaHeader = dr.idFacturaHeader;
+                temp.idProducto = dr.idProducto;
+                
+                temp.cNombre = dr.cNombre.Trim();
+                if (!dr.IsnCantidadNull())
+                    temp.nCantidad = dr.nCantidad;
+                listaFacturas.Add(temp);
+            }
+            return listaFacturas;
+        }
     }
 }

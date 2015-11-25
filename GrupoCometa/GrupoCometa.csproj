@@ -1109,6 +1109,7 @@
     <Content Include="Views\Suplidor\Details.cshtml" />
     <Content Include="Views\Suplidor\Delete.cshtml" />
     <Content Include="Views\Facturacion\Index.cshtml" />
+    <Content Include="Views\Facturacion\Insert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

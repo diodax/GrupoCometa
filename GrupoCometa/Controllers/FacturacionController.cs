@@ -17,21 +17,16 @@ namespace GrupoCometa.Controllers
             return View(newModel);
         }
 
-        // GET: Facturacion/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         // GET: Facturacion/Create
-        public ActionResult Create()
+        public ActionResult Insert()
         {
-            return View();
+            FacturaHeader newModel = new FacturaHeader();
+            return View(newModel);
         }
 
         // POST: Facturacion/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Insert(FacturaHeader newModels)
         {
             try
             {
