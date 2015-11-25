@@ -1,22 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace GrupoCometa.Models
 {
     public class FacturaHeader
     {
+        [Display(Name = "Código de Factura")]
         public int idFacturaHeader { get; set; }
+        [Display(Name = "Cliente")]
         public int idCliente { get; set; }
+        [Display(Name = "Tipo de Pago")]
         public int idTipoPago { get; set; }
+        [Display(Name = "Empleado")]
         public int idEmpleado { get; set; }
+        [Display(Name = "Fecha")]
         public DateTime dtFechaPago { get; set; }
+        [Display(Name = "Total")]
         public decimal mTotal { get; set; }
 
+        [Display(Name = "Código de Factura")]
         public string cEmpresa { get; set; }
 
+        //Objetos
+        public Cliente clienteActual { get; set; }
         public List<FacturaDetalle> listaDetalle { get; set; }
+        public List<SelectListItem> listaClientes { get; set; }
+        public List<SelectListItem> listaTiposPago { get; set; }
+        public List<SelectListItem> listaEmpleados { get; set; }
+        public List<SelectListItem> listaProductos { get; set; }
 
         public FacturaHeader() { }
 
@@ -40,11 +55,10 @@ namespace GrupoCometa.Models
                 if (!dr.IscEmpresaNull())
                     this.cEmpresa = dr.cEmpresa.Trim();
 
-                //TODO: Populate list
+                this.clienteActual = new Cliente(this.idCliente);
                 this.listaDetalle = FacturaDetalle.GetListaFacturasDetalle(this.idFacturaHeader);
             }
         }
-
 
         public static List<FacturaHeader> GetListaFacturas()
         {
@@ -73,6 +87,13 @@ namespace GrupoCometa.Models
             return listaFacturas;
         }
 
+        public void GetSelectLists()
+        {
+            //public List<SelectListItem> listaClientes { get; set; }
+            //public List<SelectListItem> listaTiposPago { get; set; }
+            //public List<SelectListItem> listaEmpleados { get; set; }
+            //public List<SelectListItem> listaProductos { get; set; }
+        }
     }
 
     public class FacturaDetalle

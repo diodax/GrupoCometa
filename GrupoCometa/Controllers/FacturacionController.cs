@@ -22,6 +22,7 @@ namespace GrupoCometa.Controllers
         {
             FacturaHeader newModel = new FacturaHeader();
             newModel.listaDetalle = new List<FacturaDetalle>();
+            newModel.dtFechaPago = DateTime.Now;
             return View(newModel);
         }
 
