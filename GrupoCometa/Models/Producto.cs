@@ -21,8 +21,6 @@ namespace GrupoCometa.Models
         public string idTipo { get; set; }
         [Display(Name = "Modelo")]
         public string cModelo { get; set; }
-        [Display(Name = "No. de Tracking")]
-        public int idTracking { get; set; }
         [Display(Name = "Código de Suplidor")]
         public int idSuplidor { get; set; }
 
@@ -52,7 +50,6 @@ namespace GrupoCometa.Models
                 //this.nCantidad = dr.nCantidad;
                 this.idTipo = dr.idTipo;
                 this.cModelo = dr.cModelo;
-                this.idTracking = dr.idTracking;
                 this.idSuplidor = dr.idSuplidor;
             }
         }
@@ -76,7 +73,6 @@ namespace GrupoCometa.Models
                 //item.nCantidad = dr.nCantidad;
                 item.idTipo = dr.idTipo;
                 item.cModelo = dr.cModelo;
-                item.idTracking = dr.idTracking;
                 item.idSuplidor = dr.idSuplidor;
                 listaProductos.Add(item);
             }
@@ -118,7 +114,7 @@ namespace GrupoCometa.Models
             foreach (var dr in dt)
             {
                 SelectListItem item = new SelectListItem();
-                item.Value = dr.idSuplidor;
+                item.Value = dr.idSuplidor.ToString();
                 item.Text = dr.cNombre;
                 listaSuplidores.Add(item);
             }

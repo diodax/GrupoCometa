@@ -10,16 +10,22 @@ namespace GrupoCometa.Models
 {
     public class Inventario
     {
-        [Display(Name = "Código de Inventario")]
+        [Display(Name = "Código de inventario")]
         public int idInventario { get; set; }
         [Display(Name = "Producto")]
         public int idProducto { get; set; }
+        [Display(Name = "Nombre del producto")]
+        public string cNombreProducto { get; set; }
         [Display(Name = "Almacén")]
         public int? idAlmacen { get; set; }
+        [Display(Name = "Almacén")]
+        public string cNombreAlmacen { get; set; }
         [Display(Name = "Cantidad de producto")]
         public int nCantidad { get; set; }
-        [Display(Name = "Estado de mercancía")]
+        [Display(Name = "ID estado de mercancía")]
         public int idEstado { get; set; }
+        [Display(Name = "Estado de mercancía")]
+        public string cEstado { get; set; }
 
         [Display(Name = "Fecha de Ingreso")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
@@ -86,11 +92,16 @@ namespace GrupoCometa.Models
                 Inventario item = new Inventario();
                 item.idInventario = dr.idInventario;
                 item.idProducto = dr.idProducto;
+                item.cNombreProducto = dr.cNombreProducto;
                 if (!dr.IsidAlmacenNull())
                     item.idAlmacen = dr.idAlmacen;
+                if (!dr.IscNombreAlmacenNull())
+                    item.cNombreAlmacen = dr.cNombreAlmacen;
                 if (!dr.IsnCantidadNull())
                     item.nCantidad = dr.nCantidad;
                 item.idEstado = dr.idEstado;
+                if (!dr.IscEstadoNull())
+                    item.cEstado = dr.cEstado;
                 item.dtFechaIngreso = dr.dtFechaIngreso;
 
                 listaInventarios.Add(item);
