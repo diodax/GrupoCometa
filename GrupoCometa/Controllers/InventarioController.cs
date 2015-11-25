@@ -28,6 +28,7 @@ namespace GrupoCometa.Controllers
         public ActionResult Insert()
         {
             Inventario newModel = new Inventario();
+            newModel.dtFechaIngreso = System.DateTime.Now;
             newModel.listaProductos = Inventario.GetListaProductos();
             newModel.listaAlmacenes = Inventario.GetListaAlmacenes();
             newModel.listaEstados = Inventario.GetListaEstados();
@@ -44,6 +45,7 @@ namespace GrupoCometa.Controllers
             }
             else
             {
+                newModel.dtFechaIngreso = System.DateTime.Now;
                 newModel.listaProductos = Inventario.GetListaProductos();
                 newModel.listaAlmacenes = Inventario.GetListaAlmacenes();
                 newModel.listaEstados = Inventario.GetListaEstados();
@@ -57,6 +59,7 @@ namespace GrupoCometa.Controllers
         public ActionResult Edit(int idInventario)
         {
             Inventario newModel = new Inventario(idInventario);
+            //newModel.dtFechaIngreso = System.DateTime.Now;
             newModel.listaProductos = Inventario.GetListaProductos();
             newModel.listaAlmacenes = Inventario.GetListaAlmacenes();
             newModel.listaEstados = Inventario.GetListaEstados();
@@ -73,6 +76,7 @@ namespace GrupoCometa.Controllers
             }
             else
             {
+                //newModel.dtFechaIngreso = System.DateTime.Now;
                 newModel.listaProductos = Inventario.GetListaProductos();
                 newModel.listaAlmacenes = Inventario.GetListaAlmacenes();
                 newModel.listaEstados = Inventario.GetListaEstados();

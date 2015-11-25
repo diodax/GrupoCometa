@@ -1,0 +1,76 @@
+﻿@model IEnumerable<GrupoCometa.Models.Inventario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Inventario</h2>
+
+<p>
+    @Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idInventario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idAlmacen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nCantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idEstado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtFechaIngreso)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idInventario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idAlmacen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nCantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtFechaIngreso)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { idInventario = item.idInventario }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Detalles", "Details", new { idInventario = item.idInventario }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { idInventario = item.idInventario }, new { @class = "btn btn-default" })
+        </td>
+    </tr>
+}
+
+</table>
+
+<script>
+    $(document).ready(function () {
+        $('.table').DataTable({
+            "searching": false,
+            "lengthChange": false,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+            }
+
+        });
+    });
+</script>

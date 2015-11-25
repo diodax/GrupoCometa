@@ -12,17 +12,31 @@ namespace GrupoCometa.Models
     {
         [Display(Name = "Código de Inventario")]
         public int idInventario { get; set; }
-        [Display(Name = "Código de Producto")]
+        [Display(Name = "Producto")]
         public int idProducto { get; set; }
-        [Display(Name = "Código de Almacén")]
-        public int idAlmacen { get; set; }
+        [Display(Name = "Almacén")]
+        public int? idAlmacen { get; set; }
         [Display(Name = "Cantidad de producto")]
         public int nCantidad { get; set; }
-        [Display(Name = "Código de estado de mercancía")]
+        [Display(Name = "Estado de mercancía")]
         public int idEstado { get; set; }
+
         [Display(Name = "Fecha de Ingreso")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime dtFechaIngreso { get; set; }
+        //public DateTime dtFechaIngreso
+        //{
+        //    get
+        //    {
+        //        return this.dtFechaIngreso.HasValue
+        //           ? this.dtFechaIngreso.Value
+        //           : DateTime.Now;
+        //    }
+
+        //    set { this.dtFechaIngreso = value; }
+        //}
+
+        //private DateTime? dtFechaIngreso = null;
 
         public List<SelectListItem> listaProductos { get; set; }
         public List<SelectListItem> listaAlmacenes { get; set; }
@@ -163,5 +177,6 @@ namespace GrupoCometa.Models
             Data.dsInventarioTableAdapters.InventarioTableAdapter Adapter = new Data.dsInventarioTableAdapters.InventarioTableAdapter();
             Adapter.DeleteInventario(idInventario);
         }
+
     }
 }
