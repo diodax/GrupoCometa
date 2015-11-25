@@ -436,6 +436,13 @@ namespace GrupoCometa.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ClienteRow FindByidCliente(int idCliente) {
+                return ((ClienteRow)(this.Rows.Find(new object[] {
+                            idCliente})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 ClienteDataTable cln = ((ClienteDataTable)(base.Clone()));
                 cln.InitVars();
@@ -477,11 +484,14 @@ namespace GrupoCometa.Data {
                 base.Columns.Add(this.columnnDescuento);
                 this.columncRNC = new global::System.Data.DataColumn("cRNC", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncRNC);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidCliente}, true));
                 this.columnidCliente.AutoIncrement = true;
                 this.columnidCliente.AutoIncrementSeed = -1;
                 this.columnidCliente.AutoIncrementStep = -1;
                 this.columnidCliente.AllowDBNull = false;
                 this.columnidCliente.ReadOnly = true;
+                this.columnidCliente.Unique = true;
                 this.columncRepresentante.MaxLength = 50;
                 this.columncEmpresa.MaxLength = 50;
                 this.columncEmail.MaxLength = 30;
@@ -985,7 +995,6 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
             this._adapter.InsertCommand.CommandText = "dbo.spC_InsertCliente";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "idCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cRepresentante", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cRepresentante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmpresa", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1147,48 +1156,42 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> idCliente, string cRepresentante, string cEmpresa, string cEmail, string cTelefono, global::System.Nullable<int> nDescuento, string cRNC) {
-            if ((idCliente.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idCliente.Value));
-            }
-            else {
+        public virtual int Insert(string cRepresentante, string cEmpresa, string cEmail, string cTelefono, global::System.Nullable<int> nDescuento, string cRNC) {
+            if ((cRepresentante == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((cRepresentante == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(cRepresentante));
+            }
+            if ((cEmpresa == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(cRepresentante));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(cEmpresa));
             }
-            if ((cEmpresa == null)) {
+            if ((cEmail == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(cEmpresa));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(cEmail));
             }
-            if ((cEmail == null)) {
+            if ((cTelefono == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(cEmail));
-            }
-            if ((cTelefono == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(cTelefono));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(cTelefono));
             }
             if ((nDescuento.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(nDescuento.Value));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(nDescuento.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((cRNC == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(cRNC));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(cRNC));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
