@@ -15,9 +15,10 @@
             <th>@Html.DisplayNameFor(model => model.idCodigo)</th>
             <th>@Html.DisplayNameFor(model => model.cNombre)</th>
             <th>@Html.DisplayNameFor(model => model.mPrecio)</th>
-            <th>@Html.DisplayNameFor(model => model.nCantidad)</th>
+            @*<th>@Html.DisplayNameFor(model => model.nCantidad)</th>*@
             <th>@Html.DisplayNameFor(model => model.idTipo)</th>
             <th>@Html.DisplayNameFor(model => model.cModelo)</th>
+            <th>@Html.DisplayNameFor(model => model.idSuplidor)</th>
             <th></th>
         </tr>
     </thead>
@@ -28,9 +29,10 @@
                 <td>@Html.DisplayFor(modelItem => item.idCodigo)</td>
                 <td>@Html.DisplayFor(modelItem => item.cNombre)</td>
                 <td>@Html.DisplayFor(modelItem => item.mPrecio)</td>
-                <td>@Html.DisplayFor(modelItem => item.nCantidad)</td>
+                @*<td>@Html.DisplayFor(modelItem => item.nCantidad)</td>*@
                 <td>@Html.DisplayFor(modelItem => item.idTipo)</td>
                 <td>@Html.DisplayFor(modelItem => item.cModelo)</td>
+                <td>@Html.DisplayFor(modelItem => item.idSuplidor)</td>
                 <td>
                     @Html.ActionLink("Editar", "Edit", new { idCodigo = item.idCodigo }, new { @class = "btn btn-default" }) 
                     @Html.ActionLink("Detalles", "Details", new { idCodigo = item.idCodigo }, new { @class = "btn btn-default" }) 

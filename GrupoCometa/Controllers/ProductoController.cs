@@ -29,6 +29,7 @@ namespace GrupoCometa.Controllers
         {
             Producto newModel = new Producto();
             newModel.listaTiposProducto = Producto.GetListaTiposProducto();
+            newModel.listaSuplidores = Producto.GetListaSuplidores();
             return View(newModel);
         }
 
@@ -43,6 +44,7 @@ namespace GrupoCometa.Controllers
             else
             {
                 newModel.listaTiposProducto = Producto.GetListaTiposProducto();
+                newModel.listaSuplidores = Producto.GetListaSuplidores();
                 return View(newModel);
             }
         }
@@ -52,6 +54,7 @@ namespace GrupoCometa.Controllers
         {
             Producto newModel = new Producto(idCodigo);
             newModel.listaTiposProducto = Producto.GetListaTiposProducto();
+            newModel.listaSuplidores = Producto.GetListaSuplidores();
             return View(newModel);
         }
 
@@ -66,6 +69,7 @@ namespace GrupoCometa.Controllers
             else
             {
                 newModel.listaTiposProducto = Producto.GetListaTiposProducto();
+                newModel.listaSuplidores = Producto.GetListaSuplidores();
                 return View(newModel);
             }
         }
