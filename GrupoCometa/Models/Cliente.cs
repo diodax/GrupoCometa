@@ -11,9 +11,9 @@ namespace GrupoCometa.Models
     public class Cliente
     {
         [Display(Name = "Código")]
-        public int idCliente { get; set; }
+       [Required] public int idCliente { get; set; }
         [Display(Name = "Empresa")]
-        public string cEmpresa { get; set; }
+        [Required]public string cEmpresa { get; set; }
         [Display(Name = "Representante")]
         public string cRepresentante { get; set; }
         [Display(Name = "E-Mail")]
