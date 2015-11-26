@@ -179,6 +179,7 @@
     <Compile Include="Models\CuentasPorCobrar.cs" />
     <Compile Include="Models\CuentasPorPagar.cs" />
     <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\Especial.cs" />
     <Compile Include="Models\Factura.cs" />
     <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\Producto.cs" />
