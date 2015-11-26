@@ -177,6 +177,7 @@
                                 <th>@Html.DisplayNameFor(model => model.listaDetalle.First().idProducto)</th>
                                 <th>@Html.DisplayNameFor(model => model.listaDetalle.First().cNombre)</th>
                                 <th>@Html.DisplayNameFor(model => model.listaDetalle.First().nCantidad)</th>
+                                <th>@Html.DisplayNameFor(model => model.listaDetalle.First().mPrecio)</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -190,6 +191,7 @@
                                     <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].idProducto)</td>
                                     <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].cNombre)</td>
                                     <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].nCantidad)</td>
+                                    <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].mPrecio)</td>
                                     <td><a href='javascript:removeItem("@(i)");'><i class='fa fa-times'></i></a></td>
                                 </tr>
                             }
@@ -253,12 +255,25 @@
             if (($("#tbxIdFacturaDetalle").val() != "") && ($("#dpxIdProducto").val() != "")) {    //TODO: validar el area del nuevo producto solamente
                 //Adding the datatable row
                 var cont = $("#contListaFactura").val();
+                var price = 0;
 
-                console.log(cont);
-                console.log($("#tbxIdFacturaDetalle").val());
-                console.log($("#tbxIdFacturaHeader").val());
-                console.log($("#dpxIdProducto").val());
-                console.log($("#tbxNCantidad").val());
+                //getting price
+                $.ajax({
+                    url: '@Url.Action("SelectPrecioByProducto", new { Controller = "Facturacion" })',
+                    type: 'POST',
+                    data: { "idProducto": $("#dpxIdProducto").val() },
+                    success: function (data) {
+                        price = parseInt(data);
+                    }
+                });
+
+                //
+
+                //console.log(cont);
+                //console.log($("#tbxIdFacturaDetalle").val());
+                //console.log($("#tbxIdFacturaHeader").val());
+                //console.log($("#dpxIdProducto").val());
+                //console.log($("#tbxNCantidad").val());
 
                 var a = $("#tablaFactura").dataTable().fnAddData([
                     //$("#tbxIdFacturaDetalle").val(),
@@ -266,7 +281,7 @@
                     $("#dpxIdProducto").val(),
                     $("#dpxIdProducto option:selected").text(),
                     $("#tbxNCantidad").val(),
-                   
+                    price,
                     "<a href='javascript:removeItem(" + '"' + cont + '")' + ";'><i class='fa fa-times'></i></a>"
                 ]);
 

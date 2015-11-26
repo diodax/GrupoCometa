@@ -159,12 +159,18 @@ namespace GrupoCometa.Models
 
     public class FacturaDetalle
     {
+        [Display(Name = "Código de Lista")]
         public int idFacturaDetalle { get; set; }
+        [Display(Name = "Código de Factura")]
         public int idFacturaHeader { get; set; }
+        [Display(Name = "Producto")]
         public int idProducto { get; set; }
+        [Display(Name = "Cantidad")]
         public int nCantidad { get; set; }
-
+        [Display(Name = "Nombre")]
         public string cNombre { get; set; }
+        [Display(Name = "Precio")]
+        public decimal mPrecio { get; set; }
 
         public FacturaDetalle() { }
 
@@ -185,6 +191,8 @@ namespace GrupoCometa.Models
                 temp.cNombre = dr.cNombre.Trim();
                 if (!dr.IsnCantidadNull())
                     temp.nCantidad = dr.nCantidad;
+                if (!dr.IsmPrecioNull())
+                    temp.mPrecio = dr.mPrecio;
                 listaFacturas.Add(temp);
             }
             return listaFacturas;
@@ -201,6 +209,21 @@ namespace GrupoCometa.Models
             Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter Adapter = new Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter();
             Adapter.InsertUpdateElementoFacturaDetalle(this.idFacturaDetalle, this.idFacturaHeader, this.idProducto, this.nCantidad);
 
+        }
+
+        public static decimal SelectPrecioByProductoId(int idProducto)
+        {
+            decimal result = 0;
+            Data.dsFacturaTableAdapters.PrecioByProductoIdTableAdapter Adapter = new Data.dsFacturaTableAdapters.PrecioByProductoIdTableAdapter();
+            Data.dsFactura.PrecioByProductoIdDataTable dt = Adapter.SelectPrecioByProductoId(idProducto);
+
+            if (dt.Rows.Count > 0)
+            {
+                Data.dsFactura.PrecioByProductoIdRow dr = dt[0];
+                result = dr.mPrecio;
+            }
+
+            return result;
         }
     }
 }

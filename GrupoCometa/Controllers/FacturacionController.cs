@@ -124,5 +124,12 @@ namespace GrupoCometa.Controllers
                 return View();
             }
         }
+
+        public ActionResult SelectPrecioByProducto(int idProducto)
+        {
+            //FacturaDetalle newModel = new FacturaDetalle();
+            decimal result = FacturaDetalle.SelectPrecioByProductoId(idProducto);
+            return Json(result);
+        }
     }
 }
