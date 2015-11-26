@@ -169,6 +169,8 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaDetalle)</th>
+                                <th class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaHeader)</th>
                                 <th>@Html.DisplayNameFor(model => model.listaDetalle.First().idProducto)</th>
                                 <th>@Html.DisplayNameFor(model => model.listaDetalle.First().cNombre)</th>
                                 <th>@Html.DisplayNameFor(model => model.listaDetalle.First().nCantidad)</th>
@@ -179,6 +181,8 @@
                             @foreach (var item in Model.listaDetalle)
                             {
                                 <tr>
+                                    <td class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaDetalle)</td>
+                                    <td class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaHeader)</td>
                                     <td>@Html.DisplayFor(modelItem => item.idProducto)</td>
                                     <td>@Html.DisplayFor(modelItem => item.cNombre)</td>
                                     <td>@Html.DisplayFor(modelItem => item.nCantidad)</td>                                

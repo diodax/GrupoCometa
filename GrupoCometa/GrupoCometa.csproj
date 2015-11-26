@@ -167,6 +167,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\CuentasPorCobrar.cs" />
     <Compile Include="Models\CuentasPorPagar.cs" />
+    <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\Factura.cs" />
     <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\Producto.cs" />
@@ -1109,6 +1110,20 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Scripts\bootstrap.js" />
+    <Content Include="Views\Scripts\bootstrap.min.js" />
+    <None Include="Views\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Views\Scripts\jquery-1.10.2.js" />
+    <Content Include="Views\Scripts\jquery-1.10.2.min.js" />
+    <None Include="Views\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Views\Scripts\jquery.validate.js" />
+    <Content Include="Views\Scripts\jquery.validate.min.js" />
+    <Content Include="Views\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Views\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Views\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Scripts\respond.js" />
+    <Content Include="Views\Scripts\respond.min.js" />
+    <None Include="Views\Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1146,6 +1161,11 @@
     <Content Include="Views\Inventario\Edit.cshtml" />
     <Content Include="Views\Inventario\Index.cshtml" />
     <Content Include="Views\Inventario\Insert.cshtml" />
+    <Content Include="Views\Empleado\Create.cshtml" />
+    <Content Include="Views\Empleado\Delete.cshtml" />
+    <Content Include="Views\Empleado\Details.cshtml" />
+    <Content Include="Views\Empleado\Edit.cshtml" />
+    <Content Include="Views\Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
