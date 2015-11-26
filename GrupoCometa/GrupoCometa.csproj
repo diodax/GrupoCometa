@@ -121,6 +121,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CuentasPorCobrarController.cs" />
+    <Compile Include="Controllers\CuentasPorPagarController.cs" />
     <Compile Include="Controllers\FacturacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventarioController.cs" />
@@ -130,6 +132,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsCuentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCuentas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\dsFactura.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1035,6 +1042,17 @@
     <Content Include="Data\dsFactura.xsc">
       <DependentUpon>dsFactura.xsd</DependentUpon>
     </Content>
+    <Content Include="Data\dsCuentas.xsc">
+      <DependentUpon>dsCuentas.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\dsCuentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCuentas.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Data\dsCuentas.xss">
+      <DependentUpon>dsCuentas.xsd</DependentUpon>
+    </Content>
     <None Include="Data\dsFactura.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1133,6 +1151,8 @@
     <Content Include="Views\Inventario\Edit.cshtml" />
     <Content Include="Views\Inventario\Index.cshtml" />
     <Content Include="Views\Inventario\Insert.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Index.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
