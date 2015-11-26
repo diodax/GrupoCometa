@@ -148,8 +148,9 @@
                         </div>
                     </div>
 
+                    @Html.HiddenFor(model => model.idFacturaHeader, new { id = "tbxIdFacturaHeader" })
                     
-
+                    <input id="tbxIdFacturaDetalle" name="facturaDetalleActual.idFacturaDetalle" type="hidden" value="0">
 
                     <p>@Html.ActionLink("Agregar Producto", "Insert", null, new { @class = "btn btn-outline btn-default", @type = "button" })</p>
              
@@ -158,15 +159,13 @@
         </div>
     </div>
 
-
-
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Listado de Productos</div>
                 <div class="panel-body">
-                    <p>@Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-outline btn-default", @type = "button" })</p>
-                    <table class="table">
+                    
+                    <table class="table" id="tablaFactura">
                         <thead>
                             <tr>
                                 <th class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaDetalle)</th>
@@ -178,23 +177,40 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.listaDetalle)
+                            
+                            @for (int i = 0; i < Model.listaDetalle.Count; ++i)
                             {
-                                <tr>
-                                    <td class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaDetalle)</td>
-                                    <td class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaHeader)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.idProducto)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.cNombre)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.nCantidad)</td>                                
-                                    <td>
-                                        @Html.ActionLink("Editar", "Edit", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
-                                        @Html.ActionLink("Detalles", "Details", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
-                                        @Html.ActionLink("Eliminar", "Delete", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
-                                    </td>
+                                <tr id="col@(i)">
+                                    <td class="hidden">@Html.DisplayFor(model => Model.listaDetalle[i].idFacturaDetalle)</td>
+                                    <td class="hidden">@Html.DisplayFor(model => Model.listaDetalle[i].idFacturaHeader)</td>
+                                    <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].idProducto)</td>
+                                    <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].cNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].nCantidad)</td>
+                                    <td><a href='javascript:removeItem("@(i)");'><i class='fa fa-times'></i></a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
+
+                    <!--Lleva el conteo de los elementos de la tabla-->
+                    <input type="hidden" value="@(Model.listaDetalle.Count)" id="contListaFactura" />
+
+
+                    <div id="valuesTablaFactura">
+
+                        @for (int i = 0; i < Model.listaDetalle.Count; ++i)
+                {
+                            <div id='h@(i)'>
+                                <input type='hidden' name='listaDetalle.Index' value='@(i)'>
+                                <input type='hidden' name='listaDetalle[@(i)].idFacturaDetalle' value='@Model.listaDetalle[i].idFacturaDetalle'>
+                                <input type='hidden' name='listaDetalle[@(i)].idFacturaHeader' value='@Model.listaDetalle[i].idFacturaHeader'>
+                                <input type='hidden' name='listaDetalle[@(i)].idProducto' value='@Model.listaDetalle[i].idProducto'>
+                                <input type='hidden' name='listaDetalle[@(i)].cNombre' value='@Model.listaDetalle[i].cNombre'>
+                                <input type='hidden' name='listaDetalle[@(i)].nCantidad' value='@Model.listaDetalle[i].nCantidad'>
+                            </div>
+                        }
+                    </div>
+
 
                     <div class="row form-group">
                         @Html.LabelFor(model => model.mTotal, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -207,20 +223,6 @@
             </div>
         </div>
     </div>
-
-
-    
-
-        
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.cEmpresa, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.cEmpresa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.cEmpresa, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
 
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
@@ -243,6 +245,27 @@
             });
         });
 
-        
+        function agregarProducto() {
+            if ($("form").valid() == true) {    //TODO: validar el area del nuevo producto solamente
+                //Adding the datatable row
+
+                //tbxIdFacturaHeader
+                //tbxIdFacturaDetalle
+
+                var a = $("#tablaAsignaturas").dataTable().fnAddData([
+                    $("#tbxUnivOrigen").val(),
+                    $("#tbxIdCurso").val(),
+                    $("#tbxIdPeriodo").val(),
+                    $("#tbxIdAsigOrigen").val(),
+                    $("#tbxDescAsigOrigen").val(),
+                    $("#dpxCalifAsignOrigen").val(),
+                    $("#tbxCreditosOrigen").val(),
+                    $("#dpxIdAsigSeminario").val(),
+                    $("#dpxIdAsigSeminario option:selected").text(),
+                    $("#txtCreditosSeminario").text(),
+                    "<a href='javascript:removeItem(" + '"' + cont + '")' + ";'><i class='fa fa-times'></i></a>"
+                ]);
+            }
+        }
     </script>
 }
