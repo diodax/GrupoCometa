@@ -63,14 +63,13 @@ namespace GrupoCometa.Models
             {
                 SelectListItem item = new SelectListItem();
                 item.Value = dr.idSucursal;
-                item.Text = dr.cNombre;
-                item.Text = dr.cDireccion;
+                item.Text = dr.cNombre + " - "+ dr.cDireccion;
+                //item.Text = dr.cDireccion;
                 listaSucursal.Add(item);
             }
 
             return listaSucursal;
         }
-
 
         /// <summary>
         /// Constructor con parametros
@@ -92,13 +91,13 @@ namespace GrupoCometa.Models
                         this.cApellido = dr.cApellido;
                     if (!dr.IsdtFechaIngresoNull())
                         this.dtFechaIngreso = dr.dtFechaIngreso;
-                if (!dr.IscPuestoNull())
+                    if (!dr.IscPuestoNull())
                         this.cPuesto = dr.cPuesto;
-                        if(!dr.IsmSalarioNull())
+                    if(!dr.IsmSalarioNull())
                         this.mSalario = dr.mSalario;
-                        if(!dr.IsidSucursalNull())
+                    if(!dr.IsidSucursalNull())
                         this.idSucursal = dr.idSucursal;
-                        if(!dr.IsidDeptoNull())
+                    if(!dr.IsidDeptoNull())
                         this.idDepto = dr.idDepto;
                 }
             }

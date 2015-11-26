@@ -1,0 +1,104 @@
+﻿@model IEnumerable<GrupoCometa.Models.Empleado>
+
+@{
+    ViewBag.Title = "Empleados";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Empleados</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Listado de Empleados</div>
+            <div class="panel-body">
+                <p>
+                    @Html.ActionLink("Insertar Nuevo", "Create", null, new { @class = "btn btn-primary" })
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.idEmpleado)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.cNombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.cApellido)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.dtFechaIngreso)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.cPuesto)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.mSalario)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.idDepto)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.idSucursal)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.idEmpleado)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cNombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cApellido)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.dtFechaIngreso)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cPuesto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.mSalario)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.idDepto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.idSucursal)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { idEmpleado = item.idEmpleado }, new { @class = "btn btn-default" }) |
+                                    @Html.ActionLink("Detalles", "Details", new { idEmpleado = item.idEmpleado }, new { @class = "btn btn-default" }) |
+                                    @Html.ActionLink("Eliminar", "Delete", new { idEmpleado = item.idEmpleado }, new { @class = "btn btn-default" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.table').DataTable({
+            "searching": false,
+            "lengthChange": false,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+            }
+
+        });
+    });
+</script>
