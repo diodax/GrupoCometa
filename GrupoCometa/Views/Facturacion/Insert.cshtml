@@ -132,7 +132,7 @@
                             <div class="row form-group">
                                 @Html.LabelFor(model => model.facturaDetalleActual.idProducto, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-7">
-                                    @Html.EditorFor(model => model.facturaDetalleActual.idProducto, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.facturaDetalleActual.idProducto, new { htmlAttributes = new { @class = "form-control", id = "dpxIdProducto" } })
                                     @Html.ValidationMessageFor(model => model.facturaDetalleActual.idProducto, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                             <div class="row form-group">
                                 @Html.LabelFor(model => model.facturaDetalleActual.nCantidad, htmlAttributes: new { @class = "control-label col-md-3" })
                                 <div class="col-md-3">
-                                    @Html.EditorFor(model => model.facturaDetalleActual.nCantidad, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.facturaDetalleActual.nCantidad, new { htmlAttributes = new { @class = "form-control", id = "tbxNCantidad" } })
                                     @Html.ValidationMessageFor(model => model.facturaDetalleActual.nCantidad, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -151,8 +151,12 @@
                     @Html.HiddenFor(model => model.idFacturaHeader, new { id = "tbxIdFacturaHeader" })
                     
                     <input id="tbxIdFacturaDetalle" name="facturaDetalleActual.idFacturaDetalle" type="hidden" value="0">
+                   
 
-                    <p>@Html.ActionLink("Agregar Producto", "Insert", null, new { @class = "btn btn-outline btn-default", @type = "button" })</p>
+
+
+                    <input type="button" value="Agregar Producto" class="btn btn-primary" onclick="agregarProducto();" />
+                    @*<p>@Html.ActionLink("Agregar Producto", "Insert", null, new { @class = "btn btn-outline btn-default", @type = "button" })</p>*@
              
                 </div>
             </div>
@@ -246,26 +250,47 @@
         });
 
         function agregarProducto() {
-            if ($("form").valid() == true) {    //TODO: validar el area del nuevo producto solamente
+            if (($("#tbxIdFacturaDetalle").val() != "") && ($("#dpxIdProducto").val() != "")) {    //TODO: validar el area del nuevo producto solamente
                 //Adding the datatable row
+                var cont = $("#contListaFactura").val();
 
-                //tbxIdFacturaHeader
-                //tbxIdFacturaDetalle
+                console.log(cont);
+                console.log($("#tbxIdFacturaDetalle").val());
+                console.log($("#tbxIdFacturaHeader").val());
+                console.log($("#dpxIdProducto").val());
+                console.log($("#tbxNCantidad").val());
 
-                var a = $("#tablaAsignaturas").dataTable().fnAddData([
-                    $("#tbxUnivOrigen").val(),
-                    $("#tbxIdCurso").val(),
-                    $("#tbxIdPeriodo").val(),
-                    $("#tbxIdAsigOrigen").val(),
-                    $("#tbxDescAsigOrigen").val(),
-                    $("#dpxCalifAsignOrigen").val(),
-                    $("#tbxCreditosOrigen").val(),
-                    $("#dpxIdAsigSeminario").val(),
-                    $("#dpxIdAsigSeminario option:selected").text(),
-                    $("#txtCreditosSeminario").text(),
+                var a = $("#tablaFactura").dataTable().fnAddData([
+                    $("#tbxIdFacturaDetalle").val(),
+                    $("#tbxIdFacturaHeader").val(),
+                    $("#dpxIdProducto").val(),
+                    $("#tbxNCantidad").val(),
+                   
                     "<a href='javascript:removeItem(" + '"' + cont + '")' + ";'><i class='fa fa-times'></i></a>"
                 ]);
+
+                var n = $("#tablaFactura").dataTable().fnSettings().aoData[a[0]].nTr;
+                n.setAttribute('id', "col" + cont);
+
+                
+
+                $("#valuesTablaFactura").append(
+                            '<div id="h' + cont + '">' +
+                                "<input type='hidden' name='.Index' value='" + cont + "'>" +
+                                "<input type='hidden' name='[" + cont + "].idFacturaDetalle' value='" + $("#tbxIdFacturaDetalle").val() + "'>" +
+                                "<input type='hidden' name='[" + cont + "].idFacturaHeader' value='" + $("#tbxIdCurso").val() + "'>" +
+                                "<input type='hidden' name='[" + cont + "].idProducto' value='" + $("#tbxIdPeriodo").val() + "'>" +
+                                "<input type='hidden' name='[" + cont + "].nCantidad' value='" + $("#tbxIdAsigOrigen").val() + "'>" +
+                            '</div>');
+                $("#cont").val(parseInt(cont) + 1);
             }
+        }
+
+        function removeItem(id) {
+            var table = $(".datatables").dataTable();
+            table.fnDeleteRow(id);
+            //$("#col" + id).remove();
+            $("#h" + id).remove();
         }
     </script>
 }
