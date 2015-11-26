@@ -12,7 +12,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.idEmpleado, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idEmpleado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.idEmpleado, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.idEmpleado, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -60,7 +60,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.idDepto, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idDepto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model=>model.idDepto, Model.listaDepartamentos, new { @class = "form-control" }) 
                 @Html.ValidationMessageFor(model => model.idDepto, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -82,7 +82,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
 </div>
 
 @section Scripts {
