@@ -19,9 +19,9 @@ namespace GrupoCometa.Controllers
 
 
         // GET: Empleado/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int idEmpleado)
         {
-            Empleado newModel = new Empleado(id);
+            Empleado newModel = new Empleado(idEmpleado);
             return View(newModel);
         }
 
@@ -57,9 +57,9 @@ namespace GrupoCometa.Controllers
         
 
         // GET: Empleado/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int idEmpleado)
         {
-            Empleado newModel = new Empleado(id);
+            Empleado newModel = new Empleado(idEmpleado);
             return View(newModel);
         }
 
@@ -80,17 +80,17 @@ namespace GrupoCometa.Controllers
         }
 
         // GET: Empleado/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int idEmpleado)
         {
-            Empleado newModel = new     Empleado(id);
+            Empleado newModel = new Empleado(idEmpleado);
             return View(newModel);
         }
 
         // POST: Empleado/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, Empleado newModel)
+        public ActionResult Delete(int idEmpleado, Empleado newModel)
         {
-            Empleado.DeleteEmpleado(id);
+            Empleado.DeleteEmpleado(idEmpleado);
             return RedirectToAction("Index");
         }
     }
