@@ -1153,6 +1153,14 @@
     <Content Include="Views\Inventario\Insert.cshtml" />
     <Content Include="Views\CuentasPorCobrar\Index.cshtml" />
     <Content Include="Views\CuentasPorPagar\Index.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Delete.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Delete.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Details.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Details.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Edit.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Edit.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Insert.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Insert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

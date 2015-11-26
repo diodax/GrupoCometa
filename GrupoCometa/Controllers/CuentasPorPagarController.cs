@@ -12,7 +12,6 @@ namespace GrupoCometa.Controllers
         // GET: CuentasPorPagar
         public ActionResult Index()
         {
-
             List<CuentasPorPagar> ListaCuentasPorPagar = new List<CuentasPorPagar>();
             ListaCuentasPorPagar = CuentasPorPagar.GetListaCuentasPorPagar();
             return View(ListaCuentasPorPagar);

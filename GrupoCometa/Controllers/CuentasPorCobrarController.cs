@@ -12,7 +12,6 @@ namespace GrupoCometa.Controllers
         // GET: CuentasPorCobrar
         public ActionResult Index()
         {
-
             List<CuentasPorCobrar> ListaCuentasPorCobrar = new List<CuentasPorCobrar>();
             ListaCuentasPorCobrar = CuentasPorCobrar.GetListaCuentasPorCobrar();
             return View(ListaCuentasPorCobrar);
