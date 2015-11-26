@@ -11,10 +11,14 @@ namespace GrupoCometa.Models
     public class Cliente
     {
         [Display(Name = "Código")]
-        public int idCliente { get; set; }
+       [Required] public int idCliente { get; set; }
         [Display(Name = "Empresa")]
+<<<<<<< HEAD
         [StringLength(50, ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo no puede exceder los {1} caracteres")]
         public string cEmpresa { get; set; }
+=======
+        [Required]public string cEmpresa { get; set; }
+>>>>>>> 3dbb9c386f69d6822a19c776ee7b666a86bddda9
         [Display(Name = "Representante")]
         [StringLength(50, ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo no puede exceder los {1} caracteres")]
         public string cRepresentante { get; set; }

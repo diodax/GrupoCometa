@@ -1,0 +1,82 @@
+﻿@model GrupoCometa.Models.Empleado
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtFechaIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtFechaIngreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cPuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cPuesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mSalario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mSalario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idDepto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idDepto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idSucursal)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
