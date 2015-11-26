@@ -72,7 +72,8 @@ namespace GrupoCometa.Models
                 item.mPrecio = dr.mPrecio;
                 //item.nCantidad = dr.nCantidad;
                 item.idTipo = dr.idTipo;
-                item.cModelo = dr.cModelo;
+                if (!dr.IscModeloNull())
+                    item.cModelo = dr.cModelo;
                 item.idSuplidor = dr.idSuplidor;
                 listaProductos.Add(item);
             }

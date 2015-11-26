@@ -11,14 +11,10 @@ namespace GrupoCometa.Models
     public class Cliente
     {
         [Display(Name = "Código")]
-       [Required] public int idCliente { get; set; }
+        public int idCliente { get; set; }
         [Display(Name = "Empresa")]
-<<<<<<< HEAD
         [StringLength(50, ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo no puede exceder los {1} caracteres")]
         public string cEmpresa { get; set; }
-=======
-        [Required]public string cEmpresa { get; set; }
->>>>>>> 3dbb9c386f69d6822a19c776ee7b666a86bddda9
         [Display(Name = "Representante")]
         [StringLength(50, ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo no puede exceder los {1} caracteres")]
         public string cRepresentante { get; set; }
@@ -59,15 +55,15 @@ namespace GrupoCometa.Models
                 this.idCliente = dr.idCliente;
                 if (!dr.IscRepresentanteNull())
                     this.cRepresentante = dr.cRepresentante;
-                if(!dr.IscEmpresaNull())
+                if (!dr.IscEmpresaNull())
                     this.cEmpresa = dr.cEmpresa;
-                if(!dr.IscEmailNull())
+                if (!dr.IscEmailNull())
                     this.cEmail = dr.cEmail;
-                if(!dr.IscTelefonoNull())
+                if (!dr.IscTelefonoNull())
                     this.cTelefono = dr.cTelefono;
-                if(!dr.IsnDescuentoNull())
+                if (!dr.IsnDescuentoNull())
                     this.nDescuento = dr.nDescuento;
-                if(!dr.IscRNCNull())
+                if (!dr.IscRNCNull())
                     this.cRNC = dr.cRNC;
             }
         }
@@ -104,7 +100,7 @@ namespace GrupoCometa.Models
 
             return listaClientes;
         }
-        
+
 
         /// <summary>
         /// Inserta el cliente a la DB
@@ -121,7 +117,7 @@ namespace GrupoCometa.Models
         public void UpdateCliente()
         {
             Data.dsClienteTableAdapters.ClienteTableAdapter Adapter = new Data.dsClienteTableAdapters.ClienteTableAdapter();
-            Adapter.UpdateCliente(this.idCliente ,this.cRepresentante, this.cEmpresa, this.cEmail, this.cTelefono, this.nDescuento, this.cRNC);
+            Adapter.UpdateCliente(this.idCliente, this.cRepresentante, this.cEmpresa, this.cEmail, this.cTelefono, this.nDescuento, this.cRNC);
         }
 
         /// <summary>
