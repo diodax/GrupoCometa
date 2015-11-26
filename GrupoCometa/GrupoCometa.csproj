@@ -121,6 +121,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CuentasPorCobrarController.cs" />
+    <Compile Include="Controllers\CuentasPorPagarController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\FacturacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventarioController.cs" />
@@ -131,11 +134,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCliente.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\dsEmpleado.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsEmpleado.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Data\dsFactura.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +143,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsProducto.cs">
+      <DependentUpon>dsProducto.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\dsProducto.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -699,6 +700,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Data\dsProducto.xsc">
+      <DependentUpon>dsProducto.xsd</DependentUpon>
+    </Content>
     <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\css\bootstrap-theme.css.map" />
     <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\css\bootstrap.css.map" />
     <Content Include="Content\plugins\DataTables\Bootstrap-3.3.5\fonts\glyphicons-halflings-regular.eot" />
@@ -1035,17 +1039,6 @@
     <Content Include="Data\dsFactura.xsc">
       <DependentUpon>dsFactura.xsd</DependentUpon>
     </Content>
-    <Content Include="Data\dsEmpleado.xsc">
-      <DependentUpon>dsEmpleado.xsd</DependentUpon>
-    </Content>
-    <None Include="Data\dsEmpleado.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsEmpleado.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Data\dsEmpleado.xss">
-      <DependentUpon>dsEmpleado.xsd</DependentUpon>
-    </Content>
     <None Include="Data\dsFactura.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1065,15 +1058,6 @@
     <Content Include="Data\dsInventario.xss">
       <DependentUpon>dsInventario.xsd</DependentUpon>
     </Content>
-    <Content Include="Data\dsTest.xsc">
-      <DependentUpon>dsTest.xsd</DependentUpon>
-    </Content>
-    <Content Include="Data\dsSuplidor.xsc">
-      <DependentUpon>dsSuplidor.xsd</DependentUpon>
-    </Content>
-    <Content Include="Data\dsProducto.xsc">
-      <DependentUpon>dsProducto.xsd</DependentUpon>
-    </Content>
     <None Include="Data\dsProducto.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1081,6 +1065,12 @@
     </None>
     <Content Include="Data\dsProducto.xss">
       <DependentUpon>dsProducto.xsd</DependentUpon>
+    </Content>
+    <Content Include="Data\dsTest.xsc">
+      <DependentUpon>dsTest.xsd</DependentUpon>
+    </Content>
+    <Content Include="Data\dsSuplidor.xsc">
+      <DependentUpon>dsSuplidor.xsd</DependentUpon>
     </Content>
     <None Include="Data\dsSuplidor.xsd">
       <SubType>Designer</SubType>
@@ -1161,6 +1151,16 @@
     <Content Include="Views\Inventario\Edit.cshtml" />
     <Content Include="Views\Inventario\Index.cshtml" />
     <Content Include="Views\Inventario\Insert.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Delete.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Details.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Edit.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Index.cshtml" />
+    <Content Include="Views\CuentasPorCobrar\Insert.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Delete.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Details.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Edit.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Index.cshtml" />
+    <Content Include="Views\CuentasPorPagar\Insert.cshtml" />
     <Content Include="Views\Empleado\Create.cshtml" />
     <Content Include="Views\Empleado\Delete.cshtml" />
     <Content Include="Views\Empleado\Details.cshtml" />

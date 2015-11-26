@@ -28,7 +28,7 @@ namespace GrupoCometa.Models
         public string cEstado { get; set; }
 
         [Display(Name = "Fecha de Ingreso")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime dtFechaIngreso { get; set; }
         //public DateTime dtFechaIngreso
         //{
@@ -68,11 +68,16 @@ namespace GrupoCometa.Models
                 Data.dsInventario.InventarioRow dr = dt[0];
                 this.idInventario = dr.idInventario;
                 this.idProducto = dr.idProducto;
+                this.cNombreProducto = dr.cNombreProducto;
                 if (!dr.IsidAlmacenNull())
                     this.idAlmacen = dr.idAlmacen;
+                if (!dr.IscNombreAlmacenNull())
+                    this.cNombreAlmacen = dr.cNombreAlmacen;
                 if (!dr.IsnCantidadNull())
                     this.nCantidad = dr.nCantidad;
                 this.idEstado= dr.idEstado;
+                if (!dr.IscEstadoNull())
+                    this.cEstado = dr.cEstado;
                 this.dtFechaIngreso = dr.dtFechaIngreso;
             }
         }

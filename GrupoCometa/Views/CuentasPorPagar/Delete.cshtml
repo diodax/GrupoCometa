@@ -1,0 +1,50 @@
+﻿@model GrupoCometa.Models.CuentasPorPagar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Está seguro que desea eliminar este elemento?</h3>
+<div>
+    @*<h4>Cuentas Por Pagar</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idTransaccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idTransaccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idFacturaHeader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idFacturaHeader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mBalance)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.idTransaccion)
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

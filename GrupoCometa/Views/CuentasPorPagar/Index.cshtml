@@ -1,0 +1,75 @@
+﻿@model IEnumerable<GrupoCometa.Models.CuentasPorPagar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Cuentas por Pagar</h2>
+    </div>
+</div>
+
+<<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Listado de Mercancía en Inventario</div>
+            <div class="panel-body">
+                <p>
+                    @Html.ActionLink("Insertar Nuevo", "Insert")
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.idTransaccion)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.idFacturaHeader)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.mBalance)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.idTransaccion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.idFacturaHeader)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.mBalance)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { idTransaccion = item.idTransaccion }, new { @class = "btn btn-default" }) |
+                                    @Html.ActionLink("Detalles", "Details", new { idTransaccion = item.idTransaccion }, new { @class = "btn btn-default" }) |
+                                    @Html.ActionLink("Eliminar", "Delete", new { idTransaccion = item.idTransaccion }, new { @class = "btn btn-default" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.table').DataTable({
+            "searching": false,
+            "lengthChange": false,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+            }
+
+        });
+    });
+</script>
+
