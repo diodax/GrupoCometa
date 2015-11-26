@@ -33,7 +33,7 @@
                             </div>
 
                             <div class="row form-group">
-                                @Html.LabelFor(model => model.dtFechaPago, htmlAttributes: new { @class = "control-label col-md-4" })
+                                @Html.LabelFor(model => model.dtFechaPago, htmlAttributes: new { @class = "control-label col-md-4 datepicker" })
                                 <div class="col-md-7">
                                     @Html.EditorFor(model => model.dtFechaPago, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.dtFechaPago, "", new { @class = "text-danger" })
@@ -231,4 +231,14 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker({
+                format: 'mm/dd/yyyy'
+            });
+        });
+
+        
+    </script>
 }
