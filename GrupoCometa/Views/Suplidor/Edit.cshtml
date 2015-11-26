@@ -1,10 +1,10 @@
-﻿@model GrupoCometa.Models.Cliente
+﻿@model GrupoCometa.Models.Suplidor
 
 @{
     ViewBag.Title = "Editar";
 }
 
-<h2>Editar Cliente</h2>
+<h2>Editar Suplidor</h2>
 
 
 @using (Html.BeginForm())
@@ -12,22 +12,22 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        @*<h4>Cliente</h4>*@
+        @*<h4>Suplidor</h4>*@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.idCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.idSuplidor, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idCliente, new { htmlAttributes = new { @class = "form-control" , @readonly = "readonly"} })
-                @Html.ValidationMessageFor(model => model.idCliente, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.idSuplidor, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.idSuplidor, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cEmpresa, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.cNombre, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.cEmpresa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.cEmpresa, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.cNombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cNombre, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -56,18 +56,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nDescuento, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.cDireccion, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nDescuento, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nDescuento, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.cRNC, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.cRNC, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.cRNC, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.cDireccion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cDireccion, "", new { @class = "text-danger" })
             </div>
         </div>
 

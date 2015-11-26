@@ -1,0 +1,92 @@
+﻿@model IEnumerable<GrupoCometa.Models.Inventario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Inventario</h2>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Listado de Mercancía en Inventario</div>
+            <div class="panel-body">
+                <p>
+                    @Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-primary" })
+                </p>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.idInventario)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.cNombreProducto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.cNombreAlmacen)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nCantidad)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.cEstado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.dtFechaIngreso)
+                        </th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.idInventario)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cNombreProducto)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cNombreAlmacen)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nCantidad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cEstado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.dtFechaIngreso)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new {idInventario = item.idInventario}, new {@class = "btn btn-default"}) |
+                                @Html.ActionLink("Detalles", "Details", new {idInventario = item.idInventario}, new {@class = "btn btn-default"}) |
+                                @Html.ActionLink("Eliminar", "Delete", new {idInventario = item.idInventario}, new {@class = "btn btn-default"})
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.table').DataTable({
+            "searching": false,
+            "lengthChange": false,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+            }
+
+        });
+    });
+</script>

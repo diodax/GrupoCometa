@@ -1,0 +1,244 @@
+﻿@model GrupoCometa.Models.FacturaHeader
+
+@{
+    ViewBag.Title = "Insert";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Crear Nueva Factura</h2>
+    </div>
+</div>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Información General de Facturación</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                            <div class="row form-group">
+                                @Html.LabelFor(model => model.idFacturaHeader, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-7">
+                                    @Html.EditorFor(model => model.idFacturaHeader, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.idFacturaHeader, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                @Html.LabelFor(model => model.dtFechaPago, htmlAttributes: new { @class = "control-label col-md-4 datepicker" })
+                                <div class="col-md-7">
+                                    @Html.EditorFor(model => model.dtFechaPago, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.dtFechaPago, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6">
+
+                            <div class="row form-group">
+                                @Html.LabelFor(model => model.idTipoPago, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-7">
+                                    @Html.EditorFor(model => model.idTipoPago, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.idTipoPago, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Información del Cliente</div>
+                <div class="panel-body">
+
+
+                    <div class="row form-group">
+                        @Html.LabelFor(model => model.idCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.idCliente, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.idCliente, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.clienteActual.idCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-4">
+                                        @Html.DisplayFor(model => model.clienteActual.idCliente)         
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.clienteActual.cEmpresa, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-4">
+                                        @Html.DisplayFor(model => model.clienteActual.cEmpresa)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.clienteActual.cRepresentante, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-4">
+                                        @Html.DisplayFor(model => model.clienteActual.cRepresentante)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.clienteActual.cRNC, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-4">
+                                        @Html.DisplayFor(model => model.clienteActual.cRNC)
+                                    </div>
+                                </div>
+                            </div>
+ 
+                        </div>
+
+                    <div class="bs-callout bs-callout-info" id="callout-glyphicons-location"></div>
+
+                        <div class="row form-group">
+                            @Html.LabelFor(model => model.idEmpleado, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.idEmpleado, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.idEmpleado, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Nuevo Elemento de Facturación</div>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row form-group">
+                                @Html.LabelFor(model => model.facturaDetalleActual.idProducto, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-7">
+                                    @Html.EditorFor(model => model.facturaDetalleActual.idProducto, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.facturaDetalleActual.idProducto, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row form-group">
+                                @Html.LabelFor(model => model.facturaDetalleActual.nCantidad, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-3">
+                                    @Html.EditorFor(model => model.facturaDetalleActual.nCantidad, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.facturaDetalleActual.nCantidad, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+
+                    <p>@Html.ActionLink("Agregar Producto", "Insert", null, new { @class = "btn btn-outline btn-default", @type = "button" })</p>
+             
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Listado de Productos</div>
+                <div class="panel-body">
+                    <p>@Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-outline btn-default", @type = "button" })</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.listaDetalle.First().idProducto)</th>
+                                <th>@Html.DisplayNameFor(model => model.listaDetalle.First().cNombre)</th>
+                                <th>@Html.DisplayNameFor(model => model.listaDetalle.First().nCantidad)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.listaDetalle)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.idProducto)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.cNombre)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.nCantidad)</td>                                
+                                    <td>
+                                        @Html.ActionLink("Editar", "Edit", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
+                                        @Html.ActionLink("Detalles", "Details", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
+                                        @Html.ActionLink("Eliminar", "Delete", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <div class="row form-group">
+                        @Html.LabelFor(model => model.mTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-2">
+                            @Html.EditorFor(model => model.mTotal, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.mTotal, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+        
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.cEmpresa, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.cEmpresa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cEmpresa, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="btn-toolbar">
+                    <input type="submit" value="Crear Factura" class="btn btn-default" />
+                    <button class="btn-default btn btnCancelar" type="button" onclick="window.location.href = '@Url.Action("Index", "Facturacion")';">Cancelar</button>
+                </div>
+            </div>
+        </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker({
+                format: 'mm/dd/yyyy'
+            });
+        });
+
+        
+    </script>
+}

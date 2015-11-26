@@ -1,0 +1,73 @@
+﻿@model GrupoCometa.Models.Inventario
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Está seguro que desea eliminar este elemento?</h3>
+<div>
+    <h4>Inventario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idInventario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idInventario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cNombreProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cNombreProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cNombreAlmacen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cNombreAlmacen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nCantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nCantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtFechaIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtFechaIngreso)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.idInventario)
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

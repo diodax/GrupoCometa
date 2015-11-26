@@ -20,17 +20,17 @@ namespace GrupoCometa.Data {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsCliente")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsSuplidor")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsCliente : global::System.Data.DataSet {
+    public partial class dsSuplidor : global::System.Data.DataSet {
         
-        private ClienteDataTable tableCliente;
+        private SuplidorDataTable tableSuplidor;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public dsCliente() {
+        public dsSuplidor() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace GrupoCometa.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected dsCliente(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsSuplidor(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace GrupoCometa.Data {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Cliente"] != null)) {
-                    base.Tables.Add(new ClienteDataTable(ds.Tables["Cliente"]));
+                if ((ds.Tables["Suplidor"] != null)) {
+                    base.Tables.Add(new SuplidorDataTable(ds.Tables["Suplidor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace GrupoCometa.Data {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ClienteDataTable Cliente {
+        public SuplidorDataTable Suplidor {
             get {
-                return this.tableCliente;
+                return this.tableSuplidor;
             }
         }
         
@@ -127,7 +127,7 @@ namespace GrupoCometa.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsCliente cln = ((dsCliente)(base.Clone()));
+            dsSuplidor cln = ((dsSuplidor)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace GrupoCometa.Data {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Cliente"] != null)) {
-                    base.Tables.Add(new ClienteDataTable(ds.Tables["Cliente"]));
+                if ((ds.Tables["Suplidor"] != null)) {
+                    base.Tables.Add(new SuplidorDataTable(ds.Tables["Suplidor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace GrupoCometa.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableCliente = ((ClienteDataTable)(base.Tables["Cliente"]));
+            this.tableSuplidor = ((SuplidorDataTable)(base.Tables["Suplidor"]));
             if ((initTable == true)) {
-                if ((this.tableCliente != null)) {
-                    this.tableCliente.InitVars();
+                if ((this.tableSuplidor != null)) {
+                    this.tableSuplidor.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace GrupoCometa.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsCliente";
+            this.DataSetName = "dsSuplidor";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsCliente.xsd";
+            this.Namespace = "http://tempuri.org/dsSuplidor.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableCliente = new ClienteDataTable();
-            base.Tables.Add(this.tableCliente);
+            this.tableSuplidor = new SuplidorDataTable();
+            base.Tables.Add(this.tableSuplidor);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeCliente() {
+        private bool ShouldSerializeSuplidor() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace GrupoCometa.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsCliente ds = new dsCliente();
+            dsSuplidor ds = new dsSuplidor();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,31 @@ namespace GrupoCometa.Data {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ClienteRowChangeEventHandler(object sender, ClienteRowChangeEvent e);
+        public delegate void SuplidorRowChangeEventHandler(object sender, SuplidorRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ClienteDataTable : global::System.Data.TypedTableBase<ClienteRow> {
+        public partial class SuplidorDataTable : global::System.Data.TypedTableBase<SuplidorRow> {
             
-            private global::System.Data.DataColumn columnidCliente;
+            private global::System.Data.DataColumn columnidSuplidor;
+            
+            private global::System.Data.DataColumn columncNombre;
             
             private global::System.Data.DataColumn columncRepresentante;
-            
-            private global::System.Data.DataColumn columncEmpresa;
             
             private global::System.Data.DataColumn columncEmail;
             
             private global::System.Data.DataColumn columncTelefono;
             
-            private global::System.Data.DataColumn columnnDescuento;
-            
-            private global::System.Data.DataColumn columncRNC;
+            private global::System.Data.DataColumn columncDireccion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClienteDataTable() {
-                this.TableName = "Cliente";
+            public SuplidorDataTable() {
+                this.TableName = "Suplidor";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +302,7 @@ namespace GrupoCometa.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ClienteDataTable(global::System.Data.DataTable table) {
+            internal SuplidorDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,16 +319,24 @@ namespace GrupoCometa.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected ClienteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SuplidorDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idClienteColumn {
+            public global::System.Data.DataColumn idSuplidorColumn {
                 get {
-                    return this.columnidCliente;
+                    return this.columnidSuplidor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cNombreColumn {
+                get {
+                    return this.columncNombre;
                 }
             }
             
@@ -339,14 +345,6 @@ namespace GrupoCometa.Data {
             public global::System.Data.DataColumn cRepresentanteColumn {
                 get {
                     return this.columncRepresentante;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cEmpresaColumn {
-                get {
-                    return this.columncEmpresa;
                 }
             }
             
@@ -368,17 +366,9 @@ namespace GrupoCometa.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nDescuentoColumn {
+            public global::System.Data.DataColumn cDireccionColumn {
                 get {
-                    return this.columnnDescuento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cRNCColumn {
-                get {
-                    return this.columncRNC;
+                    return this.columncDireccion;
                 }
             }
             
@@ -393,58 +383,57 @@ namespace GrupoCometa.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClienteRow this[int index] {
+            public SuplidorRow this[int index] {
                 get {
-                    return ((ClienteRow)(this.Rows[index]));
+                    return ((SuplidorRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ClienteRowChangeEventHandler ClienteRowChanging;
+            public event SuplidorRowChangeEventHandler SuplidorRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ClienteRowChangeEventHandler ClienteRowChanged;
+            public event SuplidorRowChangeEventHandler SuplidorRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ClienteRowChangeEventHandler ClienteRowDeleting;
+            public event SuplidorRowChangeEventHandler SuplidorRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ClienteRowChangeEventHandler ClienteRowDeleted;
+            public event SuplidorRowChangeEventHandler SuplidorRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddClienteRow(ClienteRow row) {
+            public void AddSuplidorRow(SuplidorRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClienteRow AddClienteRow(string cRepresentante, string cEmpresa, string cEmail, string cTelefono, int nDescuento, string cRNC) {
-                ClienteRow rowClienteRow = ((ClienteRow)(this.NewRow()));
+            public SuplidorRow AddSuplidorRow(int idSuplidor, string cNombre, string cRepresentante, string cEmail, string cTelefono, string cDireccion) {
+                SuplidorRow rowSuplidorRow = ((SuplidorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        idSuplidor,
+                        cNombre,
                         cRepresentante,
-                        cEmpresa,
                         cEmail,
                         cTelefono,
-                        nDescuento,
-                        cRNC};
-                rowClienteRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowClienteRow);
-                return rowClienteRow;
+                        cDireccion};
+                rowSuplidorRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSuplidorRow);
+                return rowSuplidorRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClienteRow FindByidCliente(int idCliente) {
-                return ((ClienteRow)(this.Rows.Find(new object[] {
-                            idCliente})));
+            public SuplidorRow FindByidSuplidor(int idSuplidor) {
+                return ((SuplidorRow)(this.Rows.Find(new object[] {
+                            idSuplidor})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ClienteDataTable cln = ((ClienteDataTable)(base.Clone()));
+                SuplidorDataTable cln = ((SuplidorDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,77 +441,70 @@ namespace GrupoCometa.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ClienteDataTable();
+                return new SuplidorDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnidCliente = base.Columns["idCliente"];
+                this.columnidSuplidor = base.Columns["idSuplidor"];
+                this.columncNombre = base.Columns["cNombre"];
                 this.columncRepresentante = base.Columns["cRepresentante"];
-                this.columncEmpresa = base.Columns["cEmpresa"];
                 this.columncEmail = base.Columns["cEmail"];
                 this.columncTelefono = base.Columns["cTelefono"];
-                this.columnnDescuento = base.Columns["nDescuento"];
-                this.columncRNC = base.Columns["cRNC"];
+                this.columncDireccion = base.Columns["cDireccion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnidCliente = new global::System.Data.DataColumn("idCliente", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidCliente);
+                this.columnidSuplidor = new global::System.Data.DataColumn("idSuplidor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidSuplidor);
+                this.columncNombre = new global::System.Data.DataColumn("cNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncNombre);
                 this.columncRepresentante = new global::System.Data.DataColumn("cRepresentante", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncRepresentante);
-                this.columncEmpresa = new global::System.Data.DataColumn("cEmpresa", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncEmpresa);
                 this.columncEmail = new global::System.Data.DataColumn("cEmail", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncEmail);
                 this.columncTelefono = new global::System.Data.DataColumn("cTelefono", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncTelefono);
-                this.columnnDescuento = new global::System.Data.DataColumn("nDescuento", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnDescuento);
-                this.columncRNC = new global::System.Data.DataColumn("cRNC", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncRNC);
+                this.columncDireccion = new global::System.Data.DataColumn("cDireccion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncDireccion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidCliente}, true));
-                this.columnidCliente.AutoIncrement = true;
-                this.columnidCliente.AutoIncrementSeed = -1;
-                this.columnidCliente.AutoIncrementStep = -1;
-                this.columnidCliente.AllowDBNull = false;
-                this.columnidCliente.ReadOnly = true;
-                this.columnidCliente.Unique = true;
+                                this.columnidSuplidor}, true));
+                this.columnidSuplidor.AllowDBNull = false;
+                this.columnidSuplidor.Unique = true;
+                this.columncNombre.MaxLength = 50;
                 this.columncRepresentante.MaxLength = 50;
-                this.columncEmpresa.MaxLength = 50;
-                this.columncEmail.MaxLength = 30;
-                this.columncTelefono.MaxLength = 10;
-                this.columncRNC.MaxLength = 9;
+                this.columncEmail.MaxLength = 50;
+                this.columncTelefono.MaxLength = 15;
+                this.columncDireccion.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClienteRow NewClienteRow() {
-                return ((ClienteRow)(this.NewRow()));
+            public SuplidorRow NewSuplidorRow() {
+                return ((SuplidorRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ClienteRow(builder);
+                return new SuplidorRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ClienteRow);
+                return typeof(SuplidorRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ClienteRowChanged != null)) {
-                    this.ClienteRowChanged(this, new ClienteRowChangeEvent(((ClienteRow)(e.Row)), e.Action));
+                if ((this.SuplidorRowChanged != null)) {
+                    this.SuplidorRowChanged(this, new SuplidorRowChangeEvent(((SuplidorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -530,8 +512,8 @@ namespace GrupoCometa.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ClienteRowChanging != null)) {
-                    this.ClienteRowChanging(this, new ClienteRowChangeEvent(((ClienteRow)(e.Row)), e.Action));
+                if ((this.SuplidorRowChanging != null)) {
+                    this.SuplidorRowChanging(this, new SuplidorRowChangeEvent(((SuplidorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -539,8 +521,8 @@ namespace GrupoCometa.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ClienteRowDeleted != null)) {
-                    this.ClienteRowDeleted(this, new ClienteRowChangeEvent(((ClienteRow)(e.Row)), e.Action));
+                if ((this.SuplidorRowDeleted != null)) {
+                    this.SuplidorRowDeleted(this, new SuplidorRowChangeEvent(((SuplidorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -548,14 +530,14 @@ namespace GrupoCometa.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ClienteRowDeleting != null)) {
-                    this.ClienteRowDeleting(this, new ClienteRowChangeEvent(((ClienteRow)(e.Row)), e.Action));
+                if ((this.SuplidorRowDeleting != null)) {
+                    this.SuplidorRowDeleting(this, new SuplidorRowChangeEvent(((SuplidorRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveClienteRow(ClienteRow row) {
+            public void RemoveSuplidorRow(SuplidorRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -564,7 +546,7 @@ namespace GrupoCometa.Data {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsCliente ds = new dsCliente();
+                dsSuplidor ds = new dsSuplidor();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -582,7 +564,7 @@ namespace GrupoCometa.Data {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ClienteDataTable";
+                attribute2.FixedValue = "SuplidorDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -626,25 +608,41 @@ namespace GrupoCometa.Data {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ClienteRow : global::System.Data.DataRow {
+        public partial class SuplidorRow : global::System.Data.DataRow {
             
-            private ClienteDataTable tableCliente;
+            private SuplidorDataTable tableSuplidor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ClienteRow(global::System.Data.DataRowBuilder rb) : 
+            internal SuplidorRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCliente = ((ClienteDataTable)(this.Table));
+                this.tableSuplidor = ((SuplidorDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int idCliente {
+            public int idSuplidor {
                 get {
-                    return ((int)(this[this.tableCliente.idClienteColumn]));
+                    return ((int)(this[this.tableSuplidor.idSuplidorColumn]));
                 }
                 set {
-                    this[this.tableCliente.idClienteColumn] = value;
+                    this[this.tableSuplidor.idSuplidorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cNombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableSuplidor.cNombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cNombre\' in table \'Suplidor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSuplidor.cNombreColumn] = value;
                 }
             }
             
@@ -653,30 +651,14 @@ namespace GrupoCometa.Data {
             public string cRepresentante {
                 get {
                     try {
-                        return ((string)(this[this.tableCliente.cRepresentanteColumn]));
+                        return ((string)(this[this.tableSuplidor.cRepresentanteColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cRepresentante\' in table \'Cliente\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cRepresentante\' in table \'Suplidor\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCliente.cRepresentanteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string cEmpresa {
-                get {
-                    try {
-                        return ((string)(this[this.tableCliente.cEmpresaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cEmpresa\' in table \'Cliente\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCliente.cEmpresaColumn] = value;
+                    this[this.tableSuplidor.cRepresentanteColumn] = value;
                 }
             }
             
@@ -685,14 +667,14 @@ namespace GrupoCometa.Data {
             public string cEmail {
                 get {
                     try {
-                        return ((string)(this[this.tableCliente.cEmailColumn]));
+                        return ((string)(this[this.tableSuplidor.cEmailColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cEmail\' in table \'Cliente\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cEmail\' in table \'Suplidor\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCliente.cEmailColumn] = value;
+                    this[this.tableSuplidor.cEmailColumn] = value;
                 }
             }
             
@@ -701,119 +683,91 @@ namespace GrupoCometa.Data {
             public string cTelefono {
                 get {
                     try {
-                        return ((string)(this[this.tableCliente.cTelefonoColumn]));
+                        return ((string)(this[this.tableSuplidor.cTelefonoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cTelefono\' in table \'Cliente\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cTelefono\' in table \'Suplidor\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCliente.cTelefonoColumn] = value;
+                    this[this.tableSuplidor.cTelefonoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int nDescuento {
+            public string cDireccion {
                 get {
                     try {
-                        return ((int)(this[this.tableCliente.nDescuentoColumn]));
+                        return ((string)(this[this.tableSuplidor.cDireccionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nDescuento\' in table \'Cliente\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cDireccion\' in table \'Suplidor\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCliente.nDescuentoColumn] = value;
+                    this[this.tableSuplidor.cDireccionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string cRNC {
-                get {
-                    try {
-                        return ((string)(this[this.tableCliente.cRNCColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cRNC\' in table \'Cliente\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCliente.cRNCColumn] = value;
-                }
+            public bool IscNombreNull() {
+                return this.IsNull(this.tableSuplidor.cNombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcNombreNull() {
+                this[this.tableSuplidor.cNombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IscRepresentanteNull() {
-                return this.IsNull(this.tableCliente.cRepresentanteColumn);
+                return this.IsNull(this.tableSuplidor.cRepresentanteColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetcRepresentanteNull() {
-                this[this.tableCliente.cRepresentanteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscEmpresaNull() {
-                return this.IsNull(this.tableCliente.cEmpresaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcEmpresaNull() {
-                this[this.tableCliente.cEmpresaColumn] = global::System.Convert.DBNull;
+                this[this.tableSuplidor.cRepresentanteColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IscEmailNull() {
-                return this.IsNull(this.tableCliente.cEmailColumn);
+                return this.IsNull(this.tableSuplidor.cEmailColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetcEmailNull() {
-                this[this.tableCliente.cEmailColumn] = global::System.Convert.DBNull;
+                this[this.tableSuplidor.cEmailColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IscTelefonoNull() {
-                return this.IsNull(this.tableCliente.cTelefonoColumn);
+                return this.IsNull(this.tableSuplidor.cTelefonoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetcTelefonoNull() {
-                this[this.tableCliente.cTelefonoColumn] = global::System.Convert.DBNull;
+                this[this.tableSuplidor.cTelefonoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsnDescuentoNull() {
-                return this.IsNull(this.tableCliente.nDescuentoColumn);
+            public bool IscDireccionNull() {
+                return this.IsNull(this.tableSuplidor.cDireccionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetnDescuentoNull() {
-                this[this.tableCliente.nDescuentoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscRNCNull() {
-                return this.IsNull(this.tableCliente.cRNCColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcRNCNull() {
-                this[this.tableCliente.cRNCColumn] = global::System.Convert.DBNull;
+            public void SetcDireccionNull() {
+                this[this.tableSuplidor.cDireccionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -821,22 +775,22 @@ namespace GrupoCometa.Data {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ClienteRowChangeEvent : global::System.EventArgs {
+        public class SuplidorRowChangeEvent : global::System.EventArgs {
             
-            private ClienteRow eventRow;
+            private SuplidorRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClienteRowChangeEvent(ClienteRow row, global::System.Data.DataRowAction action) {
+            public SuplidorRowChangeEvent(SuplidorRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClienteRow Row {
+            public SuplidorRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -852,7 +806,7 @@ namespace GrupoCometa.Data {
         }
     }
 }
-namespace GrupoCometa.Data.dsClienteTableAdapters {
+namespace GrupoCometa.Data.dsSuplidorTableAdapters {
     
     
     /// <summary>
@@ -864,7 +818,7 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ClienteTableAdapter : global::System.ComponentModel.Component {
+    public partial class SuplidorTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -878,7 +832,7 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ClienteTableAdapter() {
+        public SuplidorTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -975,44 +929,41 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Cliente";
-            tableMapping.ColumnMappings.Add("idCliente", "idCliente");
+            tableMapping.DataSetTable = "Suplidor";
+            tableMapping.ColumnMappings.Add("idSuplidor", "idSuplidor");
+            tableMapping.ColumnMappings.Add("cNombre", "cNombre");
             tableMapping.ColumnMappings.Add("cRepresentante", "cRepresentante");
-            tableMapping.ColumnMappings.Add("cEmpresa", "cEmpresa");
             tableMapping.ColumnMappings.Add("cEmail", "cEmail");
             tableMapping.ColumnMappings.Add("cTelefono", "cTelefono");
-            tableMapping.ColumnMappings.Add("nDescuento", "nDescuento");
-            tableMapping.ColumnMappings.Add("cRNC", "cRNC");
+            tableMapping.ColumnMappings.Add("cDireccion", "cDireccion");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "dbo.spC_DeleteCliente";
+            this._adapter.DeleteCommand.CommandText = "dbo.spS_DeleteSuplidor";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "idCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSuplidor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "idSuplidor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "dbo.spC_InsertCliente";
+            this._adapter.InsertCommand.CommandText = "dbo.spS_InsertSuplidor";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cNombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cNombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cRepresentante", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cRepresentante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmpresa", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cTelefono", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "cTelefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nDescuento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "nDescuento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cRNC", global::System.Data.SqlDbType.NChar, 9, global::System.Data.ParameterDirection.Input, 0, 0, "cRNC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cTelefono", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "cTelefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cDireccion", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "cDireccion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "dbo.spC_UpdateCliente";
+            this._adapter.UpdateCommand.CommandText = "dbo.spS_UpdateSuplidor";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "idCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSuplidor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "idSuplidor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cNombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cNombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cRepresentante", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cRepresentante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmpresa", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "cEmail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cTelefono", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "cTelefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nDescuento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "nDescuento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cRNC", global::System.Data.SqlDbType.NChar, 9, global::System.Data.ParameterDirection.Input, 0, 0, "cRNC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cTelefono", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "cTelefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cDireccion", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "cDireccion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1028,53 +979,51 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.spC_SelectListaClientes";
+            this._commandCollection[0].CommandText = "dbo.spS_SelectListaSuplidores";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "dbo.spC_DeleteCliente";
+            this._commandCollection[1].CommandText = "dbo.spS_DeleteSuplidor";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSuplidor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "dbo.spC_InsertCliente";
+            this._commandCollection[2].CommandText = "dbo.spS_InsertSuplidor";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cNombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cRepresentante", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmpresa", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cTelefono", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nDescuento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cRNC", global::System.Data.SqlDbType.NChar, 9, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cTelefono", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cDireccion", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "dbo.spC_SelectCliente";
+            this._commandCollection[3].CommandText = "dbo.spS_SelectSuplidor";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSuplidor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "dbo.spC_UpdateCliente";
+            this._commandCollection[4].CommandText = "dbo.spS_UpdateSuplidor";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSuplidor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cNombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cRepresentante", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmpresa", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cEmail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cTelefono", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nDescuento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cRNC", global::System.Data.SqlDbType.NChar, 9, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cTelefono", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cDireccion", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsCliente.ClienteDataTable SelectListaClientes() {
+        public virtual dsSuplidor.SuplidorDataTable SelectListaSuplidores() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsCliente.ClienteDataTable dataTable = new dsCliente.ClienteDataTable();
+            dsSuplidor.SuplidorDataTable dataTable = new dsSuplidor.SuplidorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1083,15 +1032,15 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsCliente.ClienteDataTable SelectCliente(global::System.Nullable<int> idCliente) {
+        public virtual dsSuplidor.SuplidorDataTable SelectSuplidor(global::System.Nullable<int> idSuplidor) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((idCliente.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(idCliente.Value));
+            if ((idSuplidor.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(idSuplidor.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            dsCliente.ClienteDataTable dataTable = new dsCliente.ClienteDataTable();
+            dsSuplidor.SuplidorDataTable dataTable = new dsSuplidor.SuplidorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1099,15 +1048,15 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsCliente.ClienteDataTable dataTable) {
+        public virtual int Update(dsSuplidor.SuplidorDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsCliente dataSet) {
-            return this.Adapter.Update(dataSet, "Cliente");
+        public virtual int Update(dsSuplidor dataSet) {
+            return this.Adapter.Update(dataSet, "Suplidor");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1129,9 +1078,9 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(global::System.Nullable<int> idCliente) {
-            if ((idCliente.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(idCliente.Value));
+        public virtual int Delete(global::System.Nullable<int> idSuplidor) {
+            if ((idSuplidor.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(idSuplidor.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1156,18 +1105,18 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string cRepresentante, string cEmpresa, string cEmail, string cTelefono, global::System.Nullable<int> nDescuento, string cRNC) {
-            if ((cRepresentante == null)) {
+        public virtual int Insert(string cNombre, string cRepresentante, string cEmail, string cTelefono, string cDireccion) {
+            if ((cNombre == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(cRepresentante));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(cNombre));
             }
-            if ((cEmpresa == null)) {
+            if ((cRepresentante == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(cEmpresa));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(cRepresentante));
             }
             if ((cEmail == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -1181,17 +1130,11 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(cTelefono));
             }
-            if ((nDescuento.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(nDescuento.Value));
-            }
-            else {
+            if ((cDireccion == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((cRNC == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(cRNC));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(cDireccion));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1213,24 +1156,24 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> idCliente, string cRepresentante, string cEmpresa, string cEmail, string cTelefono, global::System.Nullable<int> nDescuento, string cRNC) {
-            if ((idCliente.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idCliente.Value));
+        public virtual int Update(global::System.Nullable<int> idSuplidor, string cNombre, string cRepresentante, string cEmail, string cTelefono, string cDireccion) {
+            if ((idSuplidor.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idSuplidor.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((cRepresentante == null)) {
+            if ((cNombre == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(cRepresentante));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(cNombre));
             }
-            if ((cEmpresa == null)) {
+            if ((cRepresentante == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(cEmpresa));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(cRepresentante));
             }
             if ((cEmail == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -1244,17 +1187,11 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(cTelefono));
             }
-            if ((nDescuento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(nDescuento.Value));
-            }
-            else {
+            if ((cDireccion == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((cRNC == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(cRNC));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(cDireccion));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1275,10 +1212,10 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int DeleteCliente(global::System.Nullable<int> idCliente) {
+        public virtual int DeleteSuplidor(global::System.Nullable<int> idSuplidor) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((idCliente.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(idCliente.Value));
+            if ((idSuplidor.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(idSuplidor.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
@@ -1303,19 +1240,19 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertCliente(string cRepresentante, string cEmpresa, string cEmail, string cTelefono, global::System.Nullable<int> nDescuento, string cRNC) {
+        public virtual int InsertSuplidor(string cNombre, string cRepresentante, string cEmail, string cTelefono, string cDireccion) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((cRepresentante == null)) {
+            if ((cNombre == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[1].Value = ((string)(cRepresentante));
+                command.Parameters[1].Value = ((string)(cNombre));
             }
-            if ((cEmpresa == null)) {
+            if ((cRepresentante == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(cEmpresa));
+                command.Parameters[2].Value = ((string)(cRepresentante));
             }
             if ((cEmail == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
@@ -1329,17 +1266,11 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
             else {
                 command.Parameters[4].Value = ((string)(cTelefono));
             }
-            if ((nDescuento.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(nDescuento.Value));
-            }
-            else {
+            if ((cDireccion == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((cRNC == null)) {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
             else {
-                command.Parameters[6].Value = ((string)(cRNC));
+                command.Parameters[5].Value = ((string)(cDireccion));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1361,25 +1292,25 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int UpdateCliente(global::System.Nullable<int> idCliente, string cRepresentante, string cEmpresa, string cEmail, string cTelefono, global::System.Nullable<int> nDescuento, string cRNC) {
+        public virtual int UpdateSuplidor(global::System.Nullable<int> idSuplidor, string cNombre, string cRepresentante, string cEmail, string cTelefono, string cDireccion) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
-            if ((idCliente.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(idCliente.Value));
+            if ((idSuplidor.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(idSuplidor.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((cRepresentante == null)) {
+            if ((cNombre == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(cRepresentante));
+                command.Parameters[2].Value = ((string)(cNombre));
             }
-            if ((cEmpresa == null)) {
+            if ((cRepresentante == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[3].Value = ((string)(cEmpresa));
+                command.Parameters[3].Value = ((string)(cRepresentante));
             }
             if ((cEmail == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
@@ -1393,17 +1324,11 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
             else {
                 command.Parameters[5].Value = ((string)(cTelefono));
             }
-            if ((nDescuento.HasValue == true)) {
-                command.Parameters[6].Value = ((int)(nDescuento.Value));
-            }
-            else {
+            if ((cDireccion == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((cRNC == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
             else {
-                command.Parameters[7].Value = ((string)(cRNC));
+                command.Parameters[6].Value = ((string)(cDireccion));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1435,7 +1360,7 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private ClienteTableAdapter _clienteTableAdapter;
+        private SuplidorTableAdapter _suplidorTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1457,12 +1382,12 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ClienteTableAdapter ClienteTableAdapter {
+        public SuplidorTableAdapter SuplidorTableAdapter {
             get {
-                return this._clienteTableAdapter;
+                return this._suplidorTableAdapter;
             }
             set {
-                this._clienteTableAdapter = value;
+                this._suplidorTableAdapter = value;
             }
         }
         
@@ -1485,9 +1410,9 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._clienteTableAdapter != null) 
-                            && (this._clienteTableAdapter.Connection != null))) {
-                    return this._clienteTableAdapter.Connection;
+                if (((this._suplidorTableAdapter != null) 
+                            && (this._suplidorTableAdapter.Connection != null))) {
+                    return this._suplidorTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1502,7 +1427,7 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._clienteTableAdapter != null)) {
+                if ((this._suplidorTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1514,14 +1439,14 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(dsCliente dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dsSuplidor dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._clienteTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Cliente.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._suplidorTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Suplidor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._clienteTableAdapter.Update(updatedRows));
+                    result = (result + this._suplidorTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1533,13 +1458,13 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(dsCliente dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dsSuplidor dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._clienteTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Cliente.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._suplidorTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Suplidor.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._clienteTableAdapter.Update(addedRows));
+                    result = (result + this._suplidorTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1551,13 +1476,13 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(dsCliente dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dsSuplidor dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._clienteTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Cliente.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._suplidorTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Suplidor.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._clienteTableAdapter.Update(deletedRows));
+                    result = (result + this._suplidorTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1593,15 +1518,15 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(dsCliente dataSet) {
+        public virtual int UpdateAll(dsSuplidor dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._clienteTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._clienteTableAdapter.Connection) == false))) {
+            if (((this._suplidorTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._suplidorTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1637,13 +1562,13 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._clienteTableAdapter != null)) {
-                    revertConnections.Add(this._clienteTableAdapter, this._clienteTableAdapter.Connection);
-                    this._clienteTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._clienteTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._clienteTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._clienteTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._clienteTableAdapter.Adapter);
+                if ((this._suplidorTableAdapter != null)) {
+                    revertConnections.Add(this._suplidorTableAdapter, this._suplidorTableAdapter.Connection);
+                    this._suplidorTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._suplidorTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._suplidorTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._suplidorTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._suplidorTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1704,9 +1629,9 @@ namespace GrupoCometa.Data.dsClienteTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._clienteTableAdapter != null)) {
-                    this._clienteTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._clienteTableAdapter]));
-                    this._clienteTableAdapter.Transaction = null;
+                if ((this._suplidorTableAdapter != null)) {
+                    this._suplidorTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._suplidorTableAdapter]));
+                    this._suplidorTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

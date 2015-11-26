@@ -1,0 +1,71 @@
+﻿@model IEnumerable<GrupoCometa.Models.FacturaHeader>
+
+@{
+    ViewBag.Title = "Facturas";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Facturas</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Listado de Facturas Generadas</div>
+            <div class="panel-body">
+                <p>@Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-outline btn-default", @type = "button" })</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.idFacturaHeader)</th>
+                            <th>@Html.DisplayNameFor(model => model.idCliente)</th>
+                            <th>@Html.DisplayNameFor(model => model.idTipoPago)</th>
+                            <th>@Html.DisplayNameFor(model => model.idEmpleado)</th>
+                            <th>@Html.DisplayNameFor(model => model.dtFechaPago)</th>
+                            <th>@Html.DisplayNameFor(model => model.mTotal)</th>
+                            <th>@Html.DisplayNameFor(model => model.cEmpresa)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.idFacturaHeader)</td>
+                                <td>@Html.DisplayFor(modelItem => item.idCliente)</td>
+                                <td>@Html.DisplayFor(modelItem => item.idTipoPago)</td>
+                                <td>@Html.DisplayFor(modelItem => item.idEmpleado)</td>
+                                <td>@Html.DisplayFor(modelItem => item.dtFechaPago)</td>
+                                <td>@Html.DisplayFor(modelItem => item.mTotal)</td>
+                                <td>@Html.DisplayFor(modelItem => item.cEmpresa)</td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
+                                    @Html.ActionLink("Detalles", "Details", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
+                                    @Html.ActionLink("Eliminar", "Delete", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable({
+                "searching": false,
+                "lengthChange": false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+
+            });
+        });
+    </script>
+}

@@ -120,13 +120,26 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-	<Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\FacturacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
-	<Compile Include="Data\dsCliente.Designer.cs">
+    <Compile Include="Controllers\SuplidorController.cs" />
+    <Compile Include="Data\dsCliente.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsInventario1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInventario.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\dsProducto.cs">
       <DependentUpon>dsProducto.xsd</DependentUpon>
@@ -136,6 +149,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsProducto.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\dsSuplidor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSuplidor.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\dsTest.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -144,8 +162,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-	<Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\CuentasPorCobrar.cs" />
+    <Compile Include="Models\CuentasPorPagar.cs" />
+    <Compile Include="Models\Factura.cs" />
+    <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Suplidor.cs" />
     <Compile Include="Models\TestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -686,7 +709,7 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-	<Content Include="Data\dsCliente.xsc">
+    <Content Include="Data\dsCliente.xsc">
       <DependentUpon>dsCliente.xsd</DependentUpon>
     </Content>
     <None Include="Data\dsCliente.xsd">
@@ -1009,6 +1032,28 @@
     <Content Include="bower_components\startbootstrap-sb-admin-2\less\variables.less" />
     <Content Include="bower_components\startbootstrap-sb-admin-2\LICENSE" />
     <Content Include="bower_components\startbootstrap-sb-admin-2\README.md" />
+    <Content Include="Data\dsFactura.xsc">
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\dsFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFactura.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Data\dsFactura.xss">
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </Content>
+    <Content Include="Data\dsInventario.xsc">
+      <DependentUpon>dsInventario.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\dsInventario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInventario1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Data\dsInventario.xss">
+      <DependentUpon>dsInventario.xsd</DependentUpon>
+    </Content>
     <None Include="Data\dsProducto.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1019,6 +1064,17 @@
     </Content>
     <Content Include="Data\dsTest.xsc">
       <DependentUpon>dsTest.xsd</DependentUpon>
+    </Content>
+    <Content Include="Data\dsSuplidor.xsc">
+      <DependentUpon>dsSuplidor.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\dsSuplidor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSuplidor.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Data\dsSuplidor.xss">
+      <DependentUpon>dsSuplidor.xsd</DependentUpon>
     </Content>
     <None Include="Data\dsTest.xsd">
       <SubType>Designer</SubType>
@@ -1059,12 +1115,24 @@
     <Content Include="Views\Producto\Insert.cshtml" />
     <Content Include="Views\Producto\Edit.cshtml" />
     <Content Include="Views\Producto\Delete.cshtml" />
-	<Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Cliente\Insert.cshtml" />
     <Content Include="Views\Cliente\Delete.cshtml" />
     <Content Include="Views\Cliente\Details.cshtml" />
     <Content Include="Views\Cliente\Edit.cshtml" />
     <Content Include="Views\Shared\_OldLayout.cshtml" />
+    <Content Include="Views\Suplidor\Index.cshtml" />
+    <Content Include="Views\Suplidor\Insert.cshtml" />
+    <Content Include="Views\Suplidor\Edit.cshtml" />
+    <Content Include="Views\Suplidor\Details.cshtml" />
+    <Content Include="Views\Suplidor\Delete.cshtml" />
+    <Content Include="Views\Facturacion\Index.cshtml" />
+    <Content Include="Views\Facturacion\Insert.cshtml" />
+    <Content Include="Views\Inventario\Delete.cshtml" />
+    <Content Include="Views\Inventario\Details.cshtml" />
+    <Content Include="Views\Inventario\Edit.cshtml" />
+    <Content Include="Views\Inventario\Index.cshtml" />
+    <Content Include="Views\Inventario\Insert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

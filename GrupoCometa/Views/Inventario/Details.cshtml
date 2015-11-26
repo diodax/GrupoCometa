@@ -1,0 +1,66 @@
+﻿@model GrupoCometa.Models.Inventario
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    @*<h4>Inventario</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idInventario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idInventario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cNombreProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cNombreProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cNombreAlmacen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cNombreAlmacen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nCantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nCantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtFechaIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtFechaIngreso)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { idInventario = Model.idInventario }, new { @class = "btn btn-default" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-default" })
+</p>

@@ -1,0 +1,66 @@
+﻿@model GrupoCometa.Models.Suplidor
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles del Suplidor</h2>
+
+<div>
+    @*<h4>Suplidor</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idSuplidor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idSuplidor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cRepresentante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cRepresentante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cTelefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cTelefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cDireccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cDireccion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { idSuplidor = Model.idSuplidor }, new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-default" })
+</p>

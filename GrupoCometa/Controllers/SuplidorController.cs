@@ -7,60 +7,62 @@ using System.Web.Mvc;
 
 namespace GrupoCometa.Controllers
 {
-    public class ClienteController : Controller
+    public class SuplidorController : Controller
     {
-        // GET: Cliente
+        // GET: Suplidor
         public ActionResult Index()
         {
-            List<Cliente> ListaClientes = new List<Cliente>();
-            ListaClientes = Cliente.GetListaClientes();
-            return View(ListaClientes);
+            List<Suplidor> ListaSuplidores = new List<Suplidor>();
+            ListaSuplidores = Suplidor.GetListaSuplidores();
+            return View(ListaSuplidores);
         }
 
-        // GET: Cliente/Details/5
-        public ActionResult Details(int idCliente)
+        // GET: Suplidor/Details/5
+        public ActionResult Details(int idSuplidor)
         {
-            Cliente newModel = new Cliente(idCliente);
+            Suplidor newModel = new Suplidor(idSuplidor);
             return View(newModel);
         }
 
         //GET: Producto/Insert/
         public ActionResult Insert()
         {
-            Cliente newModel = new Cliente();
+            Suplidor newModel = new Suplidor();
+            //newModel.listaTiposProducto = Producto.GetListaTiposProducto();
             return View(newModel);
         }
 
         [HttpPost]
-        public ActionResult Insert(Cliente newModel)
+        public ActionResult Insert(Suplidor newModel)
         {
             if (ModelState.IsValid)
             {
-                newModel.InsertCliente();
+                newModel.InsertSuplidor();
                 return RedirectToAction("Index");
             }
             else
             {
+                //newModel.listaSuplidor = Producto.GetListaTiposProducto();
                 return View(newModel);
             }
         }
 
 
 
-        // GET: Cliente/Edit/5
-        public ActionResult Edit(int idCliente)
+        // GET: Suplidor/Edit/5
+        public ActionResult Edit(int idSuplidor)
         {
-            Cliente newModel = new Cliente(idCliente);
+            Suplidor newModel = new Suplidor(idSuplidor);
             //newModel.listaTiposProducto = Producto.GetListaTiposProducto();
             return View(newModel);
         }
 
         [HttpPost]
-        public ActionResult Edit(Cliente newModel)
+        public ActionResult Edit(Suplidor newModel)
         {
             if (ModelState.IsValid)
             {
-                newModel.UpdateCliente();
+                newModel.UpdateSuplidor();
                 return RedirectToAction("Index");
             }
             else
@@ -70,18 +72,18 @@ namespace GrupoCometa.Controllers
             }
         }
 
-        // GET: Cliente/Delete/5
-        public ActionResult Delete(int idCliente)
+        // GET: Suplidor/Delete/5
+        public ActionResult Delete(int idSuplidor)
         {
-            Cliente newModel = new Cliente(idCliente);
+            Suplidor newModel = new Suplidor(idSuplidor);
             return View(newModel);
         }
 
-        // POST: Cliente/Delete/5
+        // POST: Suplidor/Delete/5
         [HttpPost]
-        public ActionResult Delete(int idCliente, Cliente newModel)
+        public ActionResult Delete(int idSuplidor, Suplidor newModel)
         {
-            Cliente.DeleteCliente(idCliente);
+            Suplidor.DeleteSuplidor(idSuplidor);
             return RedirectToAction("Index");
         }
     }

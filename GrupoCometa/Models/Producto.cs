@@ -15,14 +15,17 @@ namespace GrupoCometa.Models
         public string cNombre { get; set; }
         [Display(Name = "Precio")]
         public decimal mPrecio { get; set; }
-        [Display(Name = "Cantidad")]
-        public int nCantidad { get; set; }
+        //[Display(Name = "Cantidad")]
+        //public int nCantidad { get; set; }
         [Display(Name = "Tipo")]
         public string idTipo { get; set; }
         [Display(Name = "Modelo")]
         public string cModelo { get; set; }
+        [Display(Name = "Código de Suplidor")]
+        public int idSuplidor { get; set; }
 
         public List<SelectListItem> listaTiposProducto { get; set; }
+        public List<SelectListItem> listaSuplidores { get; set; }
 
         /// <summary>
         /// Constuctor sin parametros 
@@ -44,9 +47,10 @@ namespace GrupoCometa.Models
                 this.idCodigo = dr.idCodigo;
                 this.cNombre = dr.cNombre;
                 this.mPrecio = dr.mPrecio;
-                this.nCantidad = dr.nCantidad;
+                //this.nCantidad = dr.nCantidad;
                 this.idTipo = dr.idTipo;
                 this.cModelo = dr.cModelo;
+                this.idSuplidor = dr.idSuplidor;
             }
         }
 
@@ -66,9 +70,31 @@ namespace GrupoCometa.Models
                 item.idCodigo = dr.idCodigo;
                 item.cNombre = dr.cNombre;
                 item.mPrecio = dr.mPrecio;
-                item.nCantidad = dr.nCantidad;
+                //item.nCantidad = dr.nCantidad;
                 item.idTipo = dr.idTipo;
                 item.cModelo = dr.cModelo;
+                item.idSuplidor = dr.idSuplidor;
+                listaProductos.Add(item);
+            }
+
+            return listaProductos;
+        }
+
+        /// <summary>
+        /// Genera el contenido del dropbdown con los productos
+        /// </summary>
+        /// <returns></returns>
+        public static List<SelectListItem> GetSelectListProducto()
+        {
+            List<SelectListItem> listaProductos = new List<SelectListItem>();
+            Data.dsProductoTableAdapters.ProductosTableAdapter Adapter = new Data.dsProductoTableAdapters.ProductosTableAdapter();
+            Data.dsProducto.ProductosDataTable dt = Adapter.SelectListaProductos();
+
+            foreach (var dr in dt)
+            {
+                SelectListItem item = new SelectListItem();
+                item.Value = dr.idCodigo.ToString().Trim();
+                item.Text = dr.cNombre.Trim() + " " + dr.cModelo.Trim();
                 listaProductos.Add(item);
             }
 
@@ -97,12 +123,33 @@ namespace GrupoCometa.Models
         }
 
         /// <summary>
+        /// Genera el contenido del dropbdown con los suplidores
+        /// </summary>
+        /// <returns></returns>
+        public static List<SelectListItem> GetListaSuplidores()
+        {
+            List<SelectListItem> listaSuplidores = new List<SelectListItem>();
+            Data.dsProductoTableAdapters.SuplidorTableAdapter Adapter = new Data.dsProductoTableAdapters.SuplidorTableAdapter();
+            Data.dsProducto.SuplidorDataTable dt = Adapter.SelectListaSuplidores();
+
+            foreach (var dr in dt)
+            {
+                SelectListItem item = new SelectListItem();
+                item.Value = dr.idSuplidor.ToString();
+                item.Text = dr.cNombre;
+                listaSuplidores.Add(item);
+            }
+
+            return listaSuplidores;
+        }
+
+        /// <summary>
         /// Inserta el producto a la DB
         /// </summary>
         public void InsertProducto()
         {
             Data.dsProductoTableAdapters.ProductosTableAdapter Adapter = new Data.dsProductoTableAdapters.ProductosTableAdapter();
-            Adapter.InsertProducto(this.cNombre, this.mPrecio, this.nCantidad, this.idTipo, this.cModelo);
+            Adapter.InsertProducto(this.cNombre, this.mPrecio, /*this.nCantidad,*/ this.idTipo, this.cModelo, this.idSuplidor);
         }
 
         /// <summary>
@@ -111,7 +158,7 @@ namespace GrupoCometa.Models
         public void UpdateProducto()
         {
             Data.dsProductoTableAdapters.ProductosTableAdapter Adapter = new Data.dsProductoTableAdapters.ProductosTableAdapter();
-            Adapter.UpdateProducto(this.idCodigo, this.cNombre, this.mPrecio, this.nCantidad, this.idTipo, this.cModelo);
+            Adapter.UpdateProducto(this.idCodigo, this.cNombre, this.mPrecio, /*this.nCantidad,*/ this.idTipo, this.cModelo, this.idSuplidor);
         }
 
         /// <summary>
