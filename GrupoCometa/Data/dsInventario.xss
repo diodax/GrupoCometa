@@ -7,9 +7,9 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="110" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:EstadosMercancia" ZOrder="3" X="654" Y="375" Height="135" Width="295" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
-    <Shape ID="DesignTable:Almacen" ZOrder="2" X="648" Y="72" Height="158" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:Productos" ZOrder="4" X="930" Y="79" Height="227" Width="239" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
     <Shape ID="DesignTable:Inventario" ZOrder="1" X="120" Y="54" Height="388" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
+    <Shape ID="DesignTable:Almacen" ZOrder="2" X="648" Y="72" Height="158" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

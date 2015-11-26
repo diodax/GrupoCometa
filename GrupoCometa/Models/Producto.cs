@@ -46,10 +46,12 @@ namespace GrupoCometa.Models
                 Data.dsProducto.ProductosRow dr = dt[0];
                 this.idCodigo = dr.idCodigo;
                 this.cNombre = dr.cNombre;
-                this.mPrecio = dr.mPrecio;
+                if (!dr.IsmPrecioNull())
+                    this.mPrecio = dr.mPrecio;
                 //this.nCantidad = dr.nCantidad;
                 this.idTipo = dr.idTipo;
-                this.cModelo = dr.cModelo;
+                if (!dr.IscModeloNull())
+                    this.cModelo = dr.cModelo;
                 this.idSuplidor = dr.idSuplidor;
             }
         }
@@ -69,10 +71,15 @@ namespace GrupoCometa.Models
                 Producto item = new Producto();
                 item.idCodigo = dr.idCodigo;
                 item.cNombre = dr.cNombre;
-                item.mPrecio = dr.mPrecio;
+                if(!dr.IsmPrecioNull())
+                    item.mPrecio = dr.mPrecio;
                 //item.nCantidad = dr.nCantidad;
                 item.idTipo = dr.idTipo;
+<<<<<<< HEAD
                 if (!dr.IscModeloNull())
+=======
+                if(!dr.IscModeloNull())
+>>>>>>> eb7b68138fbb9bb6c168d0719874af1be8076567
                     item.cModelo = dr.cModelo;
                 item.idSuplidor = dr.idSuplidor;
                 listaProductos.Add(item);
