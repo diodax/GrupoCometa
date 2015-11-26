@@ -46,10 +46,12 @@ namespace GrupoCometa.Models
                 Data.dsProducto.ProductosRow dr = dt[0];
                 this.idCodigo = dr.idCodigo;
                 this.cNombre = dr.cNombre;
-                this.mPrecio = dr.mPrecio;
+                if (!dr.IsmPrecioNull())
+                    this.mPrecio = dr.mPrecio;
                 //this.nCantidad = dr.nCantidad;
                 this.idTipo = dr.idTipo;
-                this.cModelo = dr.cModelo;
+                if (!dr.IscModeloNull())
+                    this.cModelo = dr.cModelo;
                 this.idSuplidor = dr.idSuplidor;
             }
         }
