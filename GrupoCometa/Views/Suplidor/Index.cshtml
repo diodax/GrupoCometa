@@ -1,68 +1,82 @@
 ﻿@model IEnumerable<GrupoCometa.Models.Suplidor>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Suplidores";
 }
 
-<h2>Listado de Suplidores</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Suplidores</h2>
+    </div>
+</div>
 
-<p>
-    @Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-primary" })
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idSuplidor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cNombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cRepresentante)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cEmail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cTelefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cDireccion)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.idSuplidor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cNombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cRepresentante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cTelefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cDireccion)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new {idSuplidor = item.idSuplidor}, new {@class = "btn btn-default"}) |
-                @Html.ActionLink("Detalles", "Details", new {idSuplidor = item.idSuplidor}, new {@class = "btn btn-default"}) |
-                @Html.ActionLink("Eliminar", "Delete", new {idSuplidor = item.idSuplidor}, new {@class = "btn btn-default"})
-            </td>
-        </tr>
-    }
-
-</table>
-
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Listado de Suplidores</div>
+            <div class="panel-body">
+                <p>
+                    @Html.ActionLink("Insertar Nuevo", "Insert", null, new { @class = "btn btn-primary" })
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.idSuplidor)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.cNombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.cRepresentante)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.cEmail)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.cTelefono)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.cDireccion)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.idSuplidor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cNombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cRepresentante)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cEmail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cTelefono)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cDireccion)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { idSuplidor = item.idSuplidor }, new { @class = "btn btn-default" }) |
+                                    @Html.ActionLink("Detalles", "Details", new { idSuplidor = item.idSuplidor }, new { @class = "btn btn-default" }) |
+                                    @Html.ActionLink("Eliminar", "Delete", new { idSuplidor = item.idSuplidor }, new { @class = "btn btn-default" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $(document).ready(function () {
         $('.table').DataTable({
