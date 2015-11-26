@@ -20,9 +20,9 @@
                     <thead>
                         <tr>
                             <th>@Html.DisplayNameFor(model => model.idFacturaHeader)</th>
-                            <th>@Html.DisplayNameFor(model => model.idCliente)</th>
+                            @*<th>@Html.DisplayNameFor(model => model.idCliente)</th>
                             <th>@Html.DisplayNameFor(model => model.idTipoPago)</th>
-                            <th>@Html.DisplayNameFor(model => model.idEmpleado)</th>
+                            <th>@Html.DisplayNameFor(model => model.idEmpleado)</th>*@
                             <th>@Html.DisplayNameFor(model => model.dtFechaPago)</th>
                             <th>@Html.DisplayNameFor(model => model.mTotal)</th>
                             <th>@Html.DisplayNameFor(model => model.cEmpresa)</th>
@@ -34,15 +34,15 @@
                         {
                             <tr>
                                 <td>@Html.DisplayFor(modelItem => item.idFacturaHeader)</td>
-                                <td>@Html.DisplayFor(modelItem => item.idCliente)</td>
+                                @*<td>@Html.DisplayFor(modelItem => item.idCliente)</td>
                                 <td>@Html.DisplayFor(modelItem => item.idTipoPago)</td>
-                                <td>@Html.DisplayFor(modelItem => item.idEmpleado)</td>
+                                <td>@Html.DisplayFor(modelItem => item.idEmpleado)</td>*@
                                 <td>@Html.DisplayFor(modelItem => item.dtFechaPago)</td>
                                 <td>@Html.DisplayFor(modelItem => item.mTotal)</td>
                                 <td>@Html.DisplayFor(modelItem => item.cEmpresa)</td>
                                 <td>
                                     @Html.ActionLink("Editar", "Edit", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
-                                    @Html.ActionLink("Detalles", "Details", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
+                                    @*@Html.ActionLink("Detalles", "Details", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })*@
                                     @Html.ActionLink("Eliminar", "Delete", new { idFacturaHeader = item.idFacturaHeader }, new { @class = "btn btn-default" })
                                 </td>
                             </tr>

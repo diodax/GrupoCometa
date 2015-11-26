@@ -1912,7 +1912,7 @@ namespace GrupoCometa.Data.dsFacturaTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertUpdateFacturaHeader(global::System.Nullable<int> idFacturaHeader, global::System.Nullable<int> idCliente, global::System.Nullable<int> idTipoPago, global::System.Nullable<int> idEmpleado, global::System.Nullable<global::System.DateTime> dtFechaPago, global::System.Nullable<decimal> mTotal) {
+        public virtual object InsertUpdateFacturaHeader(global::System.Nullable<int> idFacturaHeader, global::System.Nullable<int> idCliente, global::System.Nullable<int> idTipoPago, global::System.Nullable<int> idEmpleado, global::System.Nullable<global::System.DateTime> dtFechaPago, global::System.Nullable<decimal> mTotal) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((idFacturaHeader.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(idFacturaHeader.Value));
@@ -1955,16 +1955,22 @@ namespace GrupoCometa.Data.dsFacturaTableAdapters {
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
+            object returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                returnValue = command.ExecuteScalar();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

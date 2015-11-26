@@ -23,60 +23,99 @@ namespace GrupoCometa.Controllers
             FacturaHeader newModel = new FacturaHeader();
             newModel.listaDetalle = new List<FacturaDetalle>();
             newModel.dtFechaPago = DateTime.Now;
+            newModel.GetSelectLists();
             return View(newModel);
         }
 
         // POST: Facturacion/Create
         [HttpPost]
-        public ActionResult Insert(FacturaHeader newModels)
+        public ActionResult Insert(FacturaHeader newModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                try
+            {
+                
+                    newModel.idFacturaHeader = newModel.InsertUpdateFactura();
+                    foreach (var item in newModel.listaDetalle)
+                    {
+                        FacturaDetalle.DeleteFacturaDetalle(item.idFacturaDetalle);
+                    }
 
-                return RedirectToAction("Index");
+                    foreach (var item in newModel.listaDetalle)
+                    {
+                        item.idFacturaHeader = newModel.idFacturaHeader;
+                        item.InsertUpdateFactura();
+                    }
+
+                    return RedirectToAction("Index");
+                
+                
             }
             catch
             {
+                newModel.GetSelectLists();
                 return View();
             }
+            }
+            newModel.GetSelectLists();
+            return View();
         }
 
         // GET: Facturacion/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int idFacturaHeader)
         {
-            return View();
+            FacturaHeader newModel = new FacturaHeader(idFacturaHeader);
+            //newModel.listaDetalle = new List<FacturaDetalle>();
+            //newModel.dtFechaPago = DateTime.Now;
+            newModel.GetSelectLists();
+            return View(newModel);
         }
 
         // POST: Facturacion/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(FacturaHeader newModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                newModel.idFacturaHeader = newModel.InsertUpdateFactura();
+                foreach (var item in newModel.listaDetalle)
+                {
+                    FacturaDetalle.DeleteFacturaDetalle(item.idFacturaDetalle);
+                }
+
+                foreach (var item in newModel.listaDetalle)
+                {
+                    item.idFacturaHeader = newModel.idFacturaHeader;
+                    item.InsertUpdateFactura();
+                }
 
                 return RedirectToAction("Index");
             }
-            catch
+            else
             {
+                newModel.GetSelectLists();
                 return View();
             }
         }
 
         // GET: Facturacion/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int idFacturaHeader)
         {
-            return View();
+            FacturaHeader newModel = new FacturaHeader(idFacturaHeader);
+            //newModel.listaDetalle = new List<FacturaDetalle>();
+            //newModel.dtFechaPago = DateTime.Now;
+            newModel.GetSelectLists();
+            return View(newModel);
         }
 
         // POST: Facturacion/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(FacturaHeader newModel)
         {
             try
             {
-                // TODO: Add delete logic here
+                FacturaHeader.DeleteFactura(newModel.idFacturaHeader);
 
                 return RedirectToAction("Index");
             }

@@ -22,7 +22,7 @@ namespace GrupoCometa.Models
         [Display(Name = "Total")]
         public decimal mTotal { get; set; }
 
-        [Display(Name = "Código de Factura")]
+        [Display(Name = "Empresa")]
         public string cEmpresa { get; set; }
 
         //Objetos
@@ -30,6 +30,7 @@ namespace GrupoCometa.Models
         public FacturaDetalle facturaDetalleActual { get; set; }
 
         public List<FacturaDetalle> listaDetalle { get; set; }
+
         public List<SelectListItem> listaClientes { get; set; }
         public List<SelectListItem> listaTiposPago { get; set; }
         public List<SelectListItem> listaEmpleados { get; set; }
@@ -97,13 +98,13 @@ namespace GrupoCometa.Models
         public static List<SelectListItem> GetListaTiposPago()
         {
             List<SelectListItem> listaTipos = new List<SelectListItem>();
-            Data.dsProductoTableAdapters.TiposProductoTableAdapter Adapter = new Data.dsProductoTableAdapters.TiposProductoTableAdapter();
-            Data.dsProducto.TiposProductoDataTable dt = Adapter.SelectListaTiposProducto();
-
+            Data.dsFacturaTableAdapters.TiposPagoTableAdapter Adapter = new Data.dsFacturaTableAdapters.TiposPagoTableAdapter();
+            Data.dsFactura.TiposPagoDataTable dt = Adapter.SelectListaTiposPago(null);
+            
             foreach (var dr in dt)
             {
                 SelectListItem item = new SelectListItem();
-                item.Value = dr.idTipo;
+                item.Value = dr.idTipoPago.ToString();
                 item.Text = dr.cDescripcion;
                 listaTipos.Add(item);
             }
@@ -111,12 +112,48 @@ namespace GrupoCometa.Models
             return listaTipos;
         }
 
+        /// <summary>
+        /// Genera la lista de productos de la DB
+        /// </summary>
+        /// <returns></returns>
+        public static List<SelectListItem> GetListaClientes()
+        {
+            List<SelectListItem> listaClientes = new List<SelectListItem>();
+            Data.dsClienteTableAdapters.ClienteTableAdapter Adapter = new Data.dsClienteTableAdapters.ClienteTableAdapter();
+            Data.dsCliente.ClienteDataTable dt = Adapter.SelectListaClientes();
+
+            foreach (var dr in dt)
+            {
+                SelectListItem item = new SelectListItem();
+                item.Value = dr.idCliente.ToString().Trim();
+               
+                if (!dr.IscEmpresaNull())
+                    item.Text = "[" + item.Value + "] " + dr.cEmpresa;
+
+                listaClientes.Add(item);
+            }
+
+            return listaClientes;
+        }
+
         public void GetSelectLists()
         {
-            //public List<SelectListItem> listaClientes { get; set; }
+            this.listaClientes = FacturaHeader.GetListaClientes();
             this.listaTiposPago = FacturaHeader.GetListaTiposPago();
-            //public List<SelectListItem> listaEmpleados { get; set; }
+            this.listaEmpleados = Empleado.GetSelectListEmpleado();
             this.listaProductos = Producto.GetSelectListProducto(); 
+        }
+
+        public int InsertUpdateFactura()
+        {
+            Data.dsFacturaTableAdapters.FacturasHeaderTableAdapter Adapter = new Data.dsFacturaTableAdapters.FacturasHeaderTableAdapter();
+            return (int)Adapter.InsertUpdateFacturaHeader(this.idFacturaHeader, this.idCliente, this.idTipoPago, this.idEmpleado, this.dtFechaPago, this.mTotal);
+        }
+
+        public static void DeleteFactura(int idFacturaHeader)
+        {
+            Data.dsFacturaTableAdapters.FacturasHeaderTableAdapter Adapter = new Data.dsFacturaTableAdapters.FacturasHeaderTableAdapter();
+            Adapter.DeleteFacturaHeader(idFacturaHeader);
         }
     }
 
@@ -151,6 +188,19 @@ namespace GrupoCometa.Models
                 listaFacturas.Add(temp);
             }
             return listaFacturas;
+        }
+
+        public static void DeleteFacturaDetalle(int idFacturaDetalle)
+        {
+            Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter Adapter = new Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter();
+            Adapter.DeleteElementoFactura(idFacturaDetalle);
+        }
+
+        public void InsertUpdateFactura()
+        {
+            Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter Adapter = new Data.dsFacturaTableAdapters.FacturasDetalleTableAdapter();
+            Adapter.InsertUpdateElementoFacturaDetalle(this.idFacturaDetalle, this.idFacturaHeader, this.idProducto, this.nCantidad);
+
         }
     }
 }

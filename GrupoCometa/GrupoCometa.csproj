@@ -1134,6 +1134,8 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Scripts\bootstrap.js" />
     <Content Include="Views\Scripts\bootstrap.min.js" />
+    <Content Include="Views\Facturacion\Delete.cshtml" />
+    <Content Include="Views\Facturacion\Edit.cshtml" />
     <None Include="Views\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Views\Scripts\jquery-1.10.2.js" />
     <Content Include="Views\Scripts\jquery-1.10.2.min.js" />

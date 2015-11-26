@@ -137,11 +137,28 @@ namespace GrupoCometa.Models
                 return listaEmpleado;
             }
 
+        public static List<SelectListItem> GetSelectListEmpleado()
+        {
+            List<SelectListItem> listaEmpleado = new List<SelectListItem>();
+            Data.dsEmpleadoTableAdapters.EmpleadoTableAdapter Adapter = new Data.dsEmpleadoTableAdapters.EmpleadoTableAdapter();
+            Data.dsEmpleado.EmpleadoDataTable dt = Adapter.SelectListaEmpleado();
 
-            /// <summary>
-            /// Inserta el cliente a la DB
-            /// </summary>
-            public void InsertEmpleado()
+            foreach (var dr in dt)
+            {
+                SelectListItem item = new SelectListItem();
+                item.Value = dr.idEmpleado.ToString().Trim();
+                item.Text = dr.cNombre;
+                listaEmpleado.Add(item);
+            }
+
+            return listaEmpleado;
+        }
+
+
+        /// <summary>
+        /// Inserta el cliente a la DB
+        /// </summary>
+        public void InsertEmpleado()
             {
                 Data.dsEmpleadoTableAdapters.EmpleadoTableAdapter Adapter = new Data.dsEmpleadoTableAdapters.EmpleadoTableAdapter();
                 Adapter.InsertEmpleado(this.cNombre, this.cApellido, this.dtFechaIngreso, this.cPuesto, this.mSalario, this.idSucursal,this.idDepto);

@@ -98,6 +98,9 @@ namespace GrupoCometa.Models
             {
                 SelectListItem item = new SelectListItem();
                 item.Value = dr.idCodigo.ToString().Trim();
+                if (dr.IscModeloNull())
+                    dr.cModelo = "";
+                
                 item.Text = dr.cNombre.Trim() + " " + dr.cModelo.Trim();
                 listaProductos.Add(item);
             }
