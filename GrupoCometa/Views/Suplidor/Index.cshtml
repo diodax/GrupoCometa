@@ -36,9 +36,9 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.cTelefono)
                             </th>
-                            <th>
+                            @*<th>
                                 @Html.DisplayNameFor(model => model.cDireccion)
-                            </th>
+                            </th>*@
                             <th></th>
                         </tr>
                     </thead>
@@ -61,12 +61,12 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.cTelefono)
                                 </td>
-                                <td>
+                                @*<td>
                                     @Html.DisplayFor(modelItem => item.cDireccion)
-                                </td>
+                                </td>*@
                                 <td>
-                                    @Html.ActionLink("Editar", "Edit", new { idSuplidor = item.idSuplidor }, new { @class = "btn btn-default" }) |
-                                    @Html.ActionLink("Detalles", "Details", new { idSuplidor = item.idSuplidor }, new { @class = "btn btn-default" }) |
+                                    @Html.ActionLink("Editar", "Edit", new { idSuplidor = item.idSuplidor }, new { @class = "btn btn-default" }) 
+                                    @Html.ActionLink("Detalles", "Details", new { idSuplidor = item.idSuplidor }, new { @class = "btn btn-default" }) 
                                     @Html.ActionLink("Eliminar", "Delete", new { idSuplidor = item.idSuplidor }, new { @class = "btn btn-default" })
                                 </td>
                             </tr>
@@ -77,15 +77,21 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('.table').DataTable({
-            "searching": false,
-            "lengthChange": false,
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-            }
 
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable({
+                "searching": false,
+                "lengthChange": false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+
+            });
         });
-    });
-</script>
+    </script>
+}
+
+

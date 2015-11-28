@@ -10,22 +10,23 @@ namespace GrupoCometa.Models
     public class Empleado
     {
        
-            [Display(Name = "Código")]
-            public int idEmpleado { get; set; }
-            [Display(Name = "Nombre")]
-            public string cNombre { get; set; }
-            [Display(Name = "Apellido")]
-            public string cApellido { get; set; }
-        [Display(Name = "Fecha Ingreso")]
+        [Display(Name = "Código")]
+        public int idEmpleado { get; set; }
+        [Display(Name = "Nombres")]
+        public string cNombre { get; set; }
+        [Display(Name = "Apellidos")]
+        public string cApellido { get; set; }
+        [Display(Name = "Fecha de Ingreso")]
         public DateTime dtFechaIngreso  { get; set; }
-            [Display(Name = "Puesto")]
-            public string cPuesto { get; set; }
-            [Display(Name = "Salario")]
-            public decimal mSalario { get; set; }
-            [Display(Name = "Departamento")]
-            public string idDepto { get; set; }
-            [Display(Name = "Sucursal")]
-            public string idSucursal { get; set; }
+        [Display(Name = "Puesto")]
+        public string cPuesto { get; set; }
+        [Display(Name = "Salario")]
+        [DataType(DataType.Currency)]
+        public decimal mSalario { get; set; }
+        [Display(Name = "Departamento")]
+        public string idDepto { get; set; }
+        [Display(Name = "Sucursal")]
+        public string idSucursal { get; set; }
 
             public List<SelectListItem> listaEmpleado { get; set; }
         public List<SelectListItem> listaDepartamentos { get; set; }

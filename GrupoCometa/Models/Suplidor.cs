@@ -19,6 +19,8 @@ namespace GrupoCometa.Models
         [StringLength(50, ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo no puede exceder los {1} caracteres")]
         public string cRepresentante { get; set; }
         [Display(Name = "E-Mail")]
+        [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "<i class='fa fa-times-circle'></i> El e-mail no contiene un formato válido")]
         [StringLength(30, ErrorMessage = "<i class='fa fa-times-circle'></i> El e-mail no puede exceder los {1} caracteres")]
         public string cEmail { get; set; }
         [Display(Name = "Teléfono")]

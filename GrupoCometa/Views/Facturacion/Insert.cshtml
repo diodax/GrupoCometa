@@ -27,15 +27,15 @@
                             <div class="row form-group">
                                 @Html.LabelFor(model => model.idFacturaHeader, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-7">
-                                    @Html.EditorFor(model => model.idFacturaHeader, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.idFacturaHeader, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                                     @Html.ValidationMessageFor(model => model.idFacturaHeader, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
                             <div class="row form-group">
-                                @Html.LabelFor(model => model.dtFechaPago, htmlAttributes: new { @class = "control-label col-md-4 datepicker" })
+                                @Html.LabelFor(model => model.dtFechaPago, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-7">
-                                    @Html.EditorFor(model => model.dtFechaPago, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.dtFechaPago, new { htmlAttributes = new { @class = "form-control datepicker" } })
                                     @Html.ValidationMessageFor(model => model.dtFechaPago, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                     <div class="row form-group">
                         @Html.LabelFor(model => model.idCliente, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-4">
-                            @Html.DropDownListFor(model => model.idCliente, Model.listaClientes, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DropDownListFor(model => model.idCliente, Model.listaClientes, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.idCliente, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -137,14 +137,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="row form-group">
                                 @Html.LabelFor(model => model.facturaDetalleActual.nCantidad, htmlAttributes: new { @class = "control-label col-md-3" })
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.facturaDetalleActual.nCantidad, new { htmlAttributes = new { @class = "form-control", id = "tbxNCantidad" } })
+                                <div class="col-md-5">
+                                    @Html.EditorFor(model => model.facturaDetalleActual.nCantidad, new { htmlAttributes = new { @class = "form-control", min = "0", step = "1", value = "1", id = "tbxNCantidad" } })
                                     @Html.ValidationMessageFor(model => model.facturaDetalleActual.nCantidad, "", new { @class = "text-danger" })
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a class="btn btn-default" role="button" onclick="agregarProducto();"><i class="fa fa-plus"></i></a>
+
+
                         </div>
                     </div>
 
@@ -152,12 +157,9 @@
                     
                     <input id="tbxIdFacturaDetalle" name="facturaDetalleActual.idFacturaDetalle" type="hidden" value="0">
                    
-
-
-
-                    <input type="button" value="Agregar Producto" class="btn btn-primary" onclick="agregarProducto();" />
-                    @*<p>@Html.ActionLink("Agregar Producto", "Insert", null, new { @class = "btn btn-outline btn-default", @type = "button" })</p>*@
-             
+                    
+                    
+         
                 </div>
             </div>
         </div>
@@ -172,8 +174,8 @@
                     <table class="table" id="tablaFactura">
                         <thead>
                             <tr>
-                                <th class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaDetalle)</th>
-                                <th class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaHeader)</th>
+                                @*<th class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaDetalle)</th>
+                                <th class="hidden">@Html.DisplayNameFor(model => model.listaDetalle.First().idFacturaHeader)</th>*@
                                 <th>@Html.DisplayNameFor(model => model.listaDetalle.First().idProducto)</th>
                                 <th>@Html.DisplayNameFor(model => model.listaDetalle.First().cNombre)</th>
                                 <th>@Html.DisplayNameFor(model => model.listaDetalle.First().nCantidad)</th>
@@ -186,8 +188,8 @@
                             @for (int i = 0; i < Model.listaDetalle.Count; ++i)
                             {
                                 <tr id="col@(i)">
-                                    <td class="hidden">@Html.DisplayFor(model => Model.listaDetalle[i].idFacturaDetalle)</td>
-                                    <td class="hidden">@Html.DisplayFor(model => Model.listaDetalle[i].idFacturaHeader)</td>
+                                    @*<td class="hidden">@Html.DisplayFor(model => Model.listaDetalle[i].idFacturaDetalle)</td>
+                                    <td class="hidden">@Html.DisplayFor(model => Model.listaDetalle[i].idFacturaHeader)</td>*@
                                     <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].idProducto)</td>
                                     <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].cNombre)</td>
                                     <td>@Html.DisplayFor(modelItem => Model.listaDetalle[i].nCantidad)</td>
@@ -221,7 +223,7 @@
                     <div class="row form-group">
                         @Html.LabelFor(model => model.mTotal, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-2">
-                            @Html.EditorFor(model => model.mTotal, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.mTotal, new { htmlAttributes = new { @class = "form-control", id = "tbxTotalFactura" } })
                             @Html.ValidationMessageFor(model => model.mTotal, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -246,6 +248,18 @@
 
     <script>
         $(document).ready(function () {
+
+            $('.table').DataTable({
+                "searching": false,
+                "lengthChange": false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+
+            });
+
+            refrescarTotal();
+
             $('.datepicker').datepicker({
                 format: 'mm/dd/yyyy'
             });
@@ -263,34 +277,26 @@
                     type: 'POST',
                     data: { "idProducto": $("#dpxIdProducto").val() },
                     success: function (data) {
-                        price = parseInt(data);
-                    }
-                });
+                        unit_price = parseInt(data);
+                        unit_amount = parseInt($("#tbxNCantidad").val());
+                        total_price = unit_price * unit_amount;
 
-                //
+                        //Agregando el nuevo row a la tabla de productos
+                        var a = $("#tablaFactura").dataTable().fnAddData([
+                            //$("#tbxIdFacturaDetalle").val(),
+                            //$("#tbxIdFacturaHeader").val(),
+                            $("#dpxIdProducto").val(),
+                            $("#dpxIdProducto option:selected").text(),
+                            unit_amount,
+                            total_price,
+                            "<a href='javascript:removeItem(" + '"' + cont + '")' + ";'><i class='fa fa-times'></i></a>"
+                        ]);
 
-                //console.log(cont);
-                //console.log($("#tbxIdFacturaDetalle").val());
-                //console.log($("#tbxIdFacturaHeader").val());
-                //console.log($("#dpxIdProducto").val());
-                //console.log($("#tbxNCantidad").val());
+                        //magic stuff, no recuerdo que hace esto
+                        var n = $("#tablaFactura").dataTable().fnSettings().aoData[a[0]].nTr;
+                        n.setAttribute('id', "col" + cont);
 
-                var a = $("#tablaFactura").dataTable().fnAddData([
-                    //$("#tbxIdFacturaDetalle").val(),
-                    //$("#tbxIdFacturaHeader").val(),
-                    $("#dpxIdProducto").val(),
-                    $("#dpxIdProducto option:selected").text(),
-                    $("#tbxNCantidad").val(),
-                    price,
-                    "<a href='javascript:removeItem(" + '"' + cont + '")' + ";'><i class='fa fa-times'></i></a>"
-                ]);
-
-                var n = $("#tablaFactura").dataTable().fnSettings().aoData[a[0]].nTr;
-                n.setAttribute('id', "col" + cont);
-
-                
-
-                $("#valuesTablaFactura").append(
+                        $("#valuesTablaFactura").append(
                             '<div id="h' + cont + '">' +
                                 "<input type='hidden' name='listaDetalle.Index' value='" + cont + "'>" +
                                 "<input type='hidden' name='listaDetalle[" + cont + "].idFacturaDetalle' value='" + $("#tbxIdFacturaDetalle").val() + "'>" +
@@ -298,8 +304,29 @@
                                 "<input type='hidden' name='listaDetalle[" + cont + "].idProducto' value='" + $("#dpxIdProducto").val() + "'>" +
                                 "<input type='hidden' name='listaDetalle[" + cont + "].nCantidad' value='" + $("#tbxNCantidad").val() + "'>" +
                             '</div>');
-                $("#contListaFactura").val(parseInt(cont) + 1);
+                        $("#contListaFactura").val(parseInt(cont) + 1);
+
+                        refrescarTotal();
+                    }
+                });
             }
+        }
+
+        function refrescarTotal() {
+
+            var table = $('#tablaFactura').DataTable();
+            var data = table.column(3).data();
+            console.log(data);
+
+            //refrescar el total
+            var total_products = 0;
+
+            $.each(data, function (key, value) {
+                total_products = total_products + parseInt(value);
+                //console.log(key + ": " + value);
+            });
+
+            $("#tbxTotalFactura").val(total_products);
         }
 
         function removeItem(id) {

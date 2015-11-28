@@ -31,7 +31,7 @@
               <Mapping SourceColumn="mTotal" DataSetColumn="mTotal" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spX_CountFacturas" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CountFacturas" Modifier="Public" Name="CountFacturas" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CountFacturas">
+              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spX_CountFacturas" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CountFacturas" Modifier="Public" Name="CountFacturas" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CountFacturas">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.spX_CountFacturas</CommandText>
@@ -41,7 +41,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_DeleteFacturaHeader" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteFacturaHeader" Modifier="Public" Name="DeleteFacturaHeader" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteFacturaHeader">
+              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_DeleteFacturaHeader" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteFacturaHeader" Modifier="Public" Name="DeleteFacturaHeader" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteFacturaHeader">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.spF_DeleteFacturaHeader</CommandText>
@@ -52,7 +52,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_InsertUpdateFacturaHeader" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertUpdateFacturaHeader" Modifier="Public" Name="InsertUpdateFacturaHeader" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertUpdateFacturaHeader">
+              <DbSource ConnectionRef="GrupoCometaDevConnectionString (Web.config)" DbObjectName="GrupoCometaDev.dbo.spF_InsertUpdateFacturaHeader" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertUpdateFacturaHeader" Modifier="Public" Name="InsertUpdateFacturaHeader" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertUpdateFacturaHeader">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.spF_InsertUpdateFacturaHeader</CommandText>
@@ -169,7 +169,7 @@
   <xs:element name="dsFactura" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsFactura" msprop:Generator_UserDSName="dsFactura">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FacturasHeader" msprop:Generator_TableClassName="FacturasHeaderDataTable" msprop:Generator_TableVarName="tableFacturasHeader" msprop:Generator_RowChangedName="FacturasHeaderRowChanged" msprop:Generator_TablePropName="FacturasHeader" msprop:Generator_RowDeletingName="FacturasHeaderRowDeleting" msprop:Generator_RowChangingName="FacturasHeaderRowChanging" msprop:Generator_RowEvHandlerName="FacturasHeaderRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasHeaderRowDeleted" msprop:Generator_RowClassName="FacturasHeaderRow" msprop:Generator_UserTableName="FacturasHeader" msprop:Generator_RowEvArgName="FacturasHeaderRowChangeEvent">
+        <xs:element name="FacturasHeader" msprop:Generator_TableClassName="FacturasHeaderDataTable" msprop:Generator_TableVarName="tableFacturasHeader" msprop:Generator_TablePropName="FacturasHeader" msprop:Generator_RowDeletingName="FacturasHeaderRowDeleting" msprop:Generator_RowChangingName="FacturasHeaderRowChanging" msprop:Generator_RowEvHandlerName="FacturasHeaderRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasHeaderRowDeleted" msprop:Generator_UserTableName="FacturasHeader" msprop:Generator_RowChangedName="FacturasHeaderRowChanged" msprop:Generator_RowEvArgName="FacturasHeaderRowChangeEvent" msprop:Generator_RowClassName="FacturasHeaderRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFacturaHeader" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidFacturaHeader" msprop:Generator_ColumnPropNameInRow="idFacturaHeader" msprop:Generator_ColumnPropNameInTable="idFacturaHeaderColumn" msprop:Generator_UserColumnName="idFacturaHeader" type="xs:int" />
@@ -188,7 +188,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FacturasDetalle" msprop:Generator_TableClassName="FacturasDetalleDataTable" msprop:Generator_TableVarName="tableFacturasDetalle" msprop:Generator_RowChangedName="FacturasDetalleRowChanged" msprop:Generator_TablePropName="FacturasDetalle" msprop:Generator_RowDeletingName="FacturasDetalleRowDeleting" msprop:Generator_RowChangingName="FacturasDetalleRowChanging" msprop:Generator_RowEvHandlerName="FacturasDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasDetalleRowDeleted" msprop:Generator_RowClassName="FacturasDetalleRow" msprop:Generator_UserTableName="FacturasDetalle" msprop:Generator_RowEvArgName="FacturasDetalleRowChangeEvent">
+        <xs:element name="FacturasDetalle" msprop:Generator_TableClassName="FacturasDetalleDataTable" msprop:Generator_TableVarName="tableFacturasDetalle" msprop:Generator_TablePropName="FacturasDetalle" msprop:Generator_RowDeletingName="FacturasDetalleRowDeleting" msprop:Generator_RowChangingName="FacturasDetalleRowChanging" msprop:Generator_RowEvHandlerName="FacturasDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasDetalleRowDeleted" msprop:Generator_UserTableName="FacturasDetalle" msprop:Generator_RowChangedName="FacturasDetalleRowChanged" msprop:Generator_RowEvArgName="FacturasDetalleRowChangeEvent" msprop:Generator_RowClassName="FacturasDetalleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFacturaDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidFacturaDetalle" msprop:Generator_ColumnPropNameInRow="idFacturaDetalle" msprop:Generator_ColumnPropNameInTable="idFacturaDetalleColumn" msprop:Generator_UserColumnName="idFacturaDetalle" type="xs:int" />
@@ -206,7 +206,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TiposPago" msprop:Generator_TableClassName="TiposPagoDataTable" msprop:Generator_TableVarName="tableTiposPago" msprop:Generator_RowChangedName="TiposPagoRowChanged" msprop:Generator_TablePropName="TiposPago" msprop:Generator_RowDeletingName="TiposPagoRowDeleting" msprop:Generator_RowChangingName="TiposPagoRowChanging" msprop:Generator_RowEvHandlerName="TiposPagoRowChangeEventHandler" msprop:Generator_RowDeletedName="TiposPagoRowDeleted" msprop:Generator_RowClassName="TiposPagoRow" msprop:Generator_UserTableName="TiposPago" msprop:Generator_RowEvArgName="TiposPagoRowChangeEvent">
+        <xs:element name="TiposPago" msprop:Generator_TableClassName="TiposPagoDataTable" msprop:Generator_TableVarName="tableTiposPago" msprop:Generator_TablePropName="TiposPago" msprop:Generator_RowDeletingName="TiposPagoRowDeleting" msprop:Generator_RowChangingName="TiposPagoRowChanging" msprop:Generator_RowEvHandlerName="TiposPagoRowChangeEventHandler" msprop:Generator_RowDeletedName="TiposPagoRowDeleted" msprop:Generator_UserTableName="TiposPago" msprop:Generator_RowChangedName="TiposPagoRowChanged" msprop:Generator_RowEvArgName="TiposPagoRowChangeEvent" msprop:Generator_RowClassName="TiposPagoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idTipoPago" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidTipoPago" msprop:Generator_ColumnPropNameInRow="idTipoPago" msprop:Generator_ColumnPropNameInTable="idTipoPagoColumn" msprop:Generator_UserColumnName="idTipoPago" type="xs:int" />
@@ -220,7 +220,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PrecioByProductoId" msprop:Generator_TableClassName="PrecioByProductoIdDataTable" msprop:Generator_TableVarName="tablePrecioByProductoId" msprop:Generator_TablePropName="PrecioByProductoId" msprop:Generator_RowDeletingName="PrecioByProductoIdRowDeleting" msprop:Generator_RowChangingName="PrecioByProductoIdRowChanging" msprop:Generator_RowEvHandlerName="PrecioByProductoIdRowChangeEventHandler" msprop:Generator_RowDeletedName="PrecioByProductoIdRowDeleted" msprop:Generator_UserTableName="PrecioByProductoId" msprop:Generator_RowChangedName="PrecioByProductoIdRowChanged" msprop:Generator_RowEvArgName="PrecioByProductoIdRowChangeEvent" msprop:Generator_RowClassName="PrecioByProductoIdRow">
+        <xs:element name="PrecioByProductoId" msprop:Generator_TableClassName="PrecioByProductoIdDataTable" msprop:Generator_TableVarName="tablePrecioByProductoId" msprop:Generator_RowChangedName="PrecioByProductoIdRowChanged" msprop:Generator_TablePropName="PrecioByProductoId" msprop:Generator_RowDeletingName="PrecioByProductoIdRowDeleting" msprop:Generator_RowChangingName="PrecioByProductoIdRowChanging" msprop:Generator_RowEvHandlerName="PrecioByProductoIdRowChangeEventHandler" msprop:Generator_RowDeletedName="PrecioByProductoIdRowDeleted" msprop:Generator_RowClassName="PrecioByProductoIdRow" msprop:Generator_UserTableName="PrecioByProductoId" msprop:Generator_RowEvArgName="PrecioByProductoIdRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCodigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCodigo" msprop:Generator_ColumnPropNameInRow="idCodigo" msprop:Generator_ColumnPropNameInTable="idCodigoColumn" msprop:Generator_UserColumnName="idCodigo" type="xs:int" />

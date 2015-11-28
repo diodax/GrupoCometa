@@ -39,12 +39,12 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.mSalario)
                             </th>
-                            <th>
+                            @*<th>
                                 @Html.DisplayNameFor(model => model.idDepto)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.idSucursal)
-                            </th>
+                            </th>*@
                             <th></th>
                         </tr>
                     </thead>
@@ -71,15 +71,15 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.mSalario)
                                 </td>
-                                <td>
+                                @*<td>
                                     @Html.DisplayFor(modelItem => item.idDepto)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.idSucursal)
-                                </td>
+                                </td>*@
                                 <td>
-                                    @Html.ActionLink("Editar", "Edit", new { idEmpleado = item.idEmpleado }, new { @class = "btn btn-default" }) |
-                                    @Html.ActionLink("Detalles", "Details", new { idEmpleado = item.idEmpleado }, new { @class = "btn btn-default" }) |
+                                    @Html.ActionLink("Editar", "Edit", new { idEmpleado = item.idEmpleado }, new { @class = "btn btn-default" }) 
+                                    @Html.ActionLink("Detalles", "Details", new { idEmpleado = item.idEmpleado }, new { @class = "btn btn-default" }) 
                                     @Html.ActionLink("Eliminar", "Delete", new { idEmpleado = item.idEmpleado }, new { @class = "btn btn-default" })
                                 </td>
                             </tr>
@@ -90,15 +90,21 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('.table').DataTable({
-            "searching": false,
-            "lengthChange": false,
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-            }
 
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable({
+                "searching": false,
+                "lengthChange": false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+
+            });
         });
-    });
-</script>
+    </script>
+}
+
+
