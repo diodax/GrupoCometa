@@ -14,14 +14,17 @@ namespace GrupoCometa.Models
         [Display(Name = "Nombre")]
         public string cNombre { get; set; }
         [Display(Name = "Precio")]
+        [DataType(DataType.Currency)]
         public decimal mPrecio { get; set; }
         //[Display(Name = "Cantidad")]
         //public int nCantidad { get; set; }
         [Display(Name = "Tipo")]
+        [Required(ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo es requerido")]
         public string idTipo { get; set; }
         [Display(Name = "Modelo")]
         public string cModelo { get; set; }
         [Display(Name = "Código de Suplidor")]
+        [Required(ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo es requerido")]
         public int idSuplidor { get; set; }
 
         public List<SelectListItem> listaTiposProducto { get; set; }

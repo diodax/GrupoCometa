@@ -10,24 +10,27 @@ namespace GrupoCometa.Models
 {
     public class Inventario
     {
-        [Display(Name = "Código de inventario")]
+        [Display(Name = "Código")]
         public int idInventario { get; set; }
         [Display(Name = "Producto")]
+        [Required(ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo es requerido")]
         public int idProducto { get; set; }
-        [Display(Name = "Nombre del producto")]
+        [Display(Name = "Nombre")]
         public string cNombreProducto { get; set; }
         [Display(Name = "Almacén")]
         public int? idAlmacen { get; set; }
         [Display(Name = "Almacén")]
         public string cNombreAlmacen { get; set; }
-        [Display(Name = "Cantidad de producto")]
+        [Display(Name = "Cantidad")]
         public int nCantidad { get; set; }
         [Display(Name = "ID estado de mercancía")]
+        [Required(ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo es requerido")]
         public int idEstado { get; set; }
-        [Display(Name = "Estado de mercancía")]
+        [Display(Name = "Estado")]
         public string cEstado { get; set; }
 
         [Display(Name = "Fecha de Ingreso")]
+        [Required(ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo es requerido")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime dtFechaIngreso { get; set; }
         //public DateTime dtFechaIngreso

@@ -31,14 +31,15 @@
                         <th>
                             @Html.DisplayNameFor(model => model.cNombreAlmacen)
                         </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.nCantidad)
-                        </th>
+                        
                         <th>
                             @Html.DisplayNameFor(model => model.cEstado)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.dtFechaIngreso)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nCantidad)
                         </th>
                         <th></th>
                     </tr>
@@ -56,9 +57,7 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.cNombreAlmacen)
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nCantidad)
-                            </td>
+                            
                             <td>
                                 @Html.DisplayFor(modelItem => item.cEstado)
                             </td>
@@ -66,8 +65,11 @@
                                 @Html.DisplayFor(modelItem => item.dtFechaIngreso)
                             </td>
                             <td>
-                                @Html.ActionLink("Editar", "Edit", new {idInventario = item.idInventario}, new {@class = "btn btn-default"}) |
-                                @Html.ActionLink("Detalles", "Details", new {idInventario = item.idInventario}, new {@class = "btn btn-default"}) |
+                                @Html.DisplayFor(modelItem => item.nCantidad)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new {idInventario = item.idInventario}, new {@class = "btn btn-default"}) 
+                                @Html.ActionLink("Detalles", "Details", new {idInventario = item.idInventario}, new {@class = "btn btn-default"}) 
                                 @Html.ActionLink("Eliminar", "Delete", new {idInventario = item.idInventario}, new {@class = "btn btn-default"})
                             </td>
                         </tr>
@@ -78,15 +80,19 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('.table').DataTable({
-            "searching": false,
-            "lengthChange": false,
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-            }
 
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable({
+                "searching": false,
+                "lengthChange": false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+
+            });
         });
-    });
-</script>
+    </script>
+}

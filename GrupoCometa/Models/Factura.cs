@@ -9,17 +9,20 @@ namespace GrupoCometa.Models
 {
     public class FacturaHeader
     {
-        [Display(Name = "Código de Factura")]
+        [Display(Name = "Clave")]
         public int idFacturaHeader { get; set; }
         [Display(Name = "Cliente")]
+        [Required(ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo es requerido")]
         public int idCliente { get; set; }
         [Display(Name = "Tipo de Pago")]
+        [Required(ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo es requerido")]
         public int idTipoPago { get; set; }
         [Display(Name = "Empleado")]
         public int idEmpleado { get; set; }
         [Display(Name = "Fecha")]
         public DateTime dtFechaPago { get; set; }
         [Display(Name = "Total")]
+        [DataType(DataType.Currency)]
         public decimal mTotal { get; set; }
 
         [Display(Name = "Empresa")]
@@ -163,13 +166,15 @@ namespace GrupoCometa.Models
         public int idFacturaDetalle { get; set; }
         [Display(Name = "Código de Factura")]
         public int idFacturaHeader { get; set; }
-        [Display(Name = "Producto")]
+        [Display(Name = "Clave")]
+        [Required(ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo es requerido")]
         public int idProducto { get; set; }
         [Display(Name = "Cantidad")]
         public int nCantidad { get; set; }
         [Display(Name = "Nombre")]
         public string cNombre { get; set; }
         [Display(Name = "Precio")]
+        [DataType(DataType.Currency)]
         public decimal mPrecio { get; set; }
 
         public FacturaDetalle() { }

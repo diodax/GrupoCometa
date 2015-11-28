@@ -25,8 +25,8 @@
                         <th>@Html.DisplayNameFor(model => model.cEmpresa)</th>
                         <th>@Html.DisplayNameFor(model => model.cRepresentante)</th>
                         <th>@Html.DisplayNameFor(model => model.cEmail)</th>
-                        <th>@Html.DisplayNameFor(model => model.cTelefono)</th>
-                        <th>@Html.DisplayNameFor(model => model.nDescuento)</th>
+                        @*<th>@Html.DisplayNameFor(model => model.cTelefono)</th>
+                        <th>@Html.DisplayNameFor(model => model.nDescuento)</th>*@
                         <th>@Html.DisplayNameFor(model => model.cRNC)</th>
                         <th></th>
                     </tr>
@@ -46,18 +46,18 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.cEmail)
                             </td>
-                            <td>
+                            @*<td>
                                 @Html.DisplayFor(modelItem => item.cTelefono)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.nDescuento)
-                            </td>
+                            </td>*@
                             <td>
                                 @Html.DisplayFor(modelItem => item.cRNC)
                             </td>
                             <td>
-                                @Html.ActionLink("Editar", "Edit", new {idCliente = item.idCliente}, new {@class = "btn btn-default"}) |
-                                @Html.ActionLink("Detalles", "Details", new {idCliente = item.idCliente}, new {@class = "btn btn-default"}) |
+                                @Html.ActionLink("Editar", "Edit", new {idCliente = item.idCliente}, new {@class = "btn btn-default"}) 
+                                @Html.ActionLink("Detalles", "Details", new {idCliente = item.idCliente}, new {@class = "btn btn-default"}) 
                                 @Html.ActionLink("Eliminar", "Delete", new {idCliente = item.idCliente}, new {@class = "btn btn-default"})
                             </td>
                         </tr>
@@ -68,15 +68,21 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        $('.table').DataTable({
-            "searching": false,
-            "lengthChange": false,
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-            }
 
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable({
+                "searching": false,
+                "lengthChange": false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+
+            });
         });
-    });
-</script>
+    </script>
+}
+
+

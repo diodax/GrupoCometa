@@ -2279,7 +2279,7 @@ namespace GrupoCometa.Data.dsFacturaTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "dbo.spF_SelectListaFacturasHeader";
@@ -2288,21 +2288,26 @@ namespace GrupoCometa.Data.dsFacturaTableAdapters {
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idFacturaHeader", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "dbo.spF_DeleteFacturaHeader";
+            this._commandCollection[1].CommandText = "dbo.spX_CountFacturas";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idFacturaHeader", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "dbo.spF_InsertUpdateFacturaHeader";
+            this._commandCollection[2].CommandText = "dbo.spF_DeleteFacturaHeader";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idFacturaHeader", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idTipoPago", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtFechaPago", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mTotal", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "dbo.spF_InsertUpdateFacturaHeader";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idFacturaHeader", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idTipoPago", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtFechaPago", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mTotal", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2325,8 +2330,36 @@ namespace GrupoCometa.Data.dsFacturaTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int DeleteFacturaHeader(global::System.Nullable<int> idFacturaHeader) {
+        public virtual object CountFacturas() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int DeleteFacturaHeader(global::System.Nullable<int> idFacturaHeader) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((idFacturaHeader.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(idFacturaHeader.Value));
             }
@@ -2354,7 +2387,7 @@ namespace GrupoCometa.Data.dsFacturaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object InsertUpdateFacturaHeader(global::System.Nullable<int> idFacturaHeader, global::System.Nullable<int> idCliente, global::System.Nullable<int> idTipoPago, global::System.Nullable<int> idEmpleado, global::System.Nullable<global::System.DateTime> dtFechaPago, global::System.Nullable<decimal> mTotal) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((idFacturaHeader.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(idFacturaHeader.Value));
             }

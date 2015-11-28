@@ -11,11 +11,12 @@ namespace GrupoCometa.Models
 {
     public class CuentasPorPagar
     {
-        [Display(Name = "Código de la Transacción")]
+        [Display(Name = "Código")]
         public int idTransaccion { get; set; }
-        [Display(Name = "Código de Factura")]
+        [Display(Name = "Clave de Factura")]
         public int idFacturaHeader { get; set; }
-        [Display(Name = "Balance de la Cuenta")]
+        [Display(Name = "Balance de Cuenta")]
+        [DataType(DataType.Currency)]
         public decimal mBalance { get; set; }
 
         public List<SelectListItem> listaFacturaHeader { get; set; }

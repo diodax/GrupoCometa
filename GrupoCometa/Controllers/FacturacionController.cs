@@ -55,11 +55,11 @@ namespace GrupoCometa.Controllers
             catch
             {
                 newModel.GetSelectLists();
-                return View();
+                return View(newModel);
             }
             }
             newModel.GetSelectLists();
-            return View();
+            return View(newModel);
         }
 
         // GET: Facturacion/Edit/5
@@ -95,7 +95,7 @@ namespace GrupoCometa.Controllers
             else
             {
                 newModel.GetSelectLists();
-                return View();
+                return View(newModel);
             }
         }
 
@@ -121,7 +121,8 @@ namespace GrupoCometa.Controllers
             }
             catch
             {
-                return View();
+                newModel.GetSelectLists();
+                return View(newModel);
             }
         }
 

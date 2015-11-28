@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
 
+    <!-- Datatables CSS Files-->
+    @*<link rel="stylesheet" type="text/css" href="~/Content/plugins/DataTables/datatables.min.css" />*@
+
     <!-- CSS Bundles -->
+    
     @Styles.Render("~/Content/css")
     <!-- Datatables CSS Files-->
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/DataTables/datatables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.standalone.css" />
 
+    <!-- Social Buttons CSS -->
+    <link href="~/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
@@ -24,7 +30,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Importadora: Grupo Cometa</a>
+                    <a class="navbar-brand" href="@Url.Action("Index", new { controller = "Home" })">Importadora: Grupo Cometa</a>
                 </div>
                 <!-- /.navbar-header -->
                 <ul class="nav navbar-nav navbar-top-links navbar-right">
@@ -259,23 +265,23 @@
 
                             <!--Inicio Menu Lateral-->
 
-                            <li><a href="@Url.Action("Index", new {controller = "Producto"})"><i class="fa fa-table fa-fw"></i> Catálogo de Productos</a></li>
+                            <li><a href="@Url.Action("Index", new {controller = "Producto"})"><i class="fa fa-list-alt fa-fw"></i> Catálogo de Productos</a></li>
 
                             <!--<li><i class="fa fa-table fa-fw"></i> Productos </a></li>-->
 
-                            <li><a href="@Url.Action("Index", new {controller = "Inventario"})"><i class="fa fa-table fa-fw"></i> Inventario</a></li>
+                            <li><a href="@Url.Action("Index", new {controller = "Inventario"})"><i class="fa fa-archive fa-fw"></i> Inventario</a></li>
 
-                            <li><a href="@Url.Action("Index", new {controller = "Empleado"})"><i class="fa fa-table fa-fw"></i> Empleados</a></li>
+                            <li><a href="@Url.Action("Index", new {controller = "Empleado"})"><i class="fa fa-users fa-fw"></i> Empleados</a></li>
 
-                            <li><a href="@Url.Action("Index", new {controller = "Cliente"})"><i class="fa fa-table fa-fw"></i> Lista de Clientes</a></li>
+                            <li><a href="@Url.Action("Index", new {controller = "Cliente"})"><i class="fa fa-shopping-cart fa-fw"></i> Lista de Clientes</a></li>
 
-                            <li><a href="@Url.Action("Index", new { controller = "Suplidor" })"><i class="fa fa-table fa-fw"></i> Lista de Suplidores</a></li>
+                            <li><a href="@Url.Action("Index", new { controller = "Suplidor" })"><i class="fa fa-truck fa-fw"></i> Lista de Suplidores</a></li>
 
-                            <li><a href="@Url.Action("Index", new {controller = "Facturacion"})"><i class="fa fa-table fa-fw"></i> Facturación</a></li>
+                            <li><a href="@Url.Action("Index", new {controller = "Facturacion"})"><i class="fa fa-money fa-fw"></i> Facturación</a></li>
 
-                            <li><a href="@Url.Action("Index", new {controller = "CuentasPorCobrar"})"><i class="fa fa-table fa-fw"></i> Cuentas por Cobrar</a></li>
+                            <li><a href="@Url.Action("Index", new {controller = "CuentasPorCobrar"})"><i class="fa fa-level-up fa-fw"></i> Cuentas por Cobrar</a></li>
 
-                            <li><a href="@Url.Action("Index", new { controller = "CuentasPorPagar" })"><i class="fa fa-table fa-fw"></i> Cuentas por Pagar</a></li>
+                            <li><a href="@Url.Action("Index", new { controller = "CuentasPorPagar" })"><i class="fa fa-level-down fa-fw"></i> Cuentas por Pagar</a></li>
                             <!--
                             <li>
                                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
