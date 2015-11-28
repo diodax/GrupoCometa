@@ -174,7 +174,7 @@ namespace GrupoCometa.Models
         [Display(Name = "Nombre")]
         public string cNombre { get; set; }
         [Display(Name = "Precio")]
-        [DataType(DataType.Currency)]
+        //[DataType(DataType.Currency)]
         public decimal mPrecio { get; set; }
 
         public FacturaDetalle() { }

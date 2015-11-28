@@ -60,6 +60,8 @@ namespace GrupoCometa.Controllers
         public ActionResult Edit(int idEmpleado)
         {
             Empleado newModel = new Empleado(idEmpleado);
+            newModel.listaDepartamentos = Empleado.GetListaDepartamento();
+            newModel.listaSucursal = Empleado.GetListaSucursal();
             return View(newModel);
         }
 
@@ -74,7 +76,8 @@ namespace GrupoCometa.Controllers
             }
             else
             {
-                
+                newModel.listaDepartamentos = Empleado.GetListaDepartamento();
+                newModel.listaSucursal = Empleado.GetListaSucursal();
                 return View(newModel);
             }
         }
@@ -91,6 +94,8 @@ namespace GrupoCometa.Controllers
         public ActionResult Delete(int idEmpleado, Empleado newModel)
         {
             Empleado.DeleteEmpleado(idEmpleado);
+            newModel.listaDepartamentos = Empleado.GetListaDepartamento();
+            newModel.listaSucursal = Empleado.GetListaSucursal();
             return RedirectToAction("Index");
         }
     }

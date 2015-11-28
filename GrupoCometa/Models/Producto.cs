@@ -23,7 +23,7 @@ namespace GrupoCometa.Models
         public string idTipo { get; set; }
         [Display(Name = "Modelo")]
         public string cModelo { get; set; }
-        [Display(Name = "Código de Suplidor")]
+        [Display(Name = "Suplidor")]
         [Required(ErrorMessage = "<i class='fa fa-times-circle'></i> Este campo es requerido")]
         public int idSuplidor { get; set; }
 

@@ -33,9 +33,9 @@
                             </div>
 
                             <div class="row form-group">
-                                @Html.LabelFor(model => model.dtFechaPago, htmlAttributes: new { @class = "control-label col-md-4 datepicker" })
+                                @Html.LabelFor(model => model.dtFechaPago, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-7">
-                                    @Html.EditorFor(model => model.dtFechaPago, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.EditorFor(model => model.dtFechaPago, new { htmlAttributes = new { @class = "form-control datepicker", @readonly = "readonly" } })
                                     @Html.ValidationMessageFor(model => model.dtFechaPago, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -248,6 +248,15 @@
 
     <script>
         $(document).ready(function () {
+
+            $('.table').DataTable({
+                "searching": false,
+                "lengthChange": false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+
+            });
 
             refrescarTotal();
 
